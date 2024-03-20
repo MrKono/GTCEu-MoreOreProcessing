@@ -14,6 +14,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import gregtech.loaders.recipe.RecyclingRecipes;
 
 import kono.ceu.mop.api.MOPValues;
+import kono.ceu.mop.recipes.PBFRecipe;
 
 @Mod.EventBusSubscriber(modid = MOPValues.MODID)
 public class CommonProxy {
@@ -36,7 +37,9 @@ public class CommonProxy {
     public static void registerRecipesHigh(RegistryEvent.Register<IRecipe> event) {}
 
     @SubscribeEvent
-    public static void registerRecipesNormal(RegistryEvent.Register<IRecipe> event) {}
+    public static void registerRecipesNormal(RegistryEvent.Register<IRecipe> event) {
+        PBFRecipe.init();
+    }
 
     @SubscribeEvent(priority = EventPriority.LOW)
     public static void registerRecipesLow(RegistryEvent.Register<IRecipe> event) {}
