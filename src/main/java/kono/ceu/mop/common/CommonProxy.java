@@ -11,9 +11,13 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
+import gregtech.api.recipes.RecipeMaps;
+import gregtech.api.recipes.ingredients.GTRecipeInput;
 import gregtech.loaders.recipe.RecyclingRecipes;
 
 import kono.ceu.mop.api.MOPValues;
+import kono.ceu.mop.api.recipes.MOPRecipeMaps;
+import kono.ceu.mop.common.metatileentities.MOPMetaTileEntities;
 import kono.ceu.mop.recipes.PBFRecipe;
 
 @Mod.EventBusSubscriber(modid = MOPValues.MODID)
@@ -34,10 +38,19 @@ public class CommonProxy {
     public static void registerRecipesHighest(RegistryEvent.Register<IRecipe> event) {}
 
     @SubscribeEvent(priority = EventPriority.HIGH)
-    public static void registerRecipesHigh(RegistryEvent.Register<IRecipe> event) {}
+    public static void registerRecipesHigh(RegistryEvent.Register<IRecipe> event) {
+        RecipeMaps.PRIMITIVE_BLAST_FURNACE_RECIPES.onRecipeBuild(builder -> {
+            MOPRecipeMaps.BRONZE_PLATED_BLAST_FURNACE_RECIPES.recipeBuilder()
+                    .inputs(builder.getInputs().toArray(new GTRecipeInput[0]))
+                    .outputs(builder.getOutputs())
+                    .duration(builder.getDuration())
+                    .buildAndRegister();
+        });
+    }
 
     @SubscribeEvent
     public static void registerRecipesNormal(RegistryEvent.Register<IRecipe> event) {
+        MOPMetaTileEntities.init();
         PBFRecipe.init();
     }
 
