@@ -7,15 +7,19 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
 
 import kono.ceu.mop.common.CommonProxy;
+import kono.ceu.mop.common.blocks.MOPMetaBlocks;
 
 @Mod.EventBusSubscriber(Side.CLIENT)
 public class ClientProxy extends CommonProxy {
 
     @Override
     public void preInit(FMLPreInitializationEvent event) {
+        MOPTextures.textures();
         super.preInit(event);
     }
 
     @SubscribeEvent
-    public static void registerModels(ModelRegistryEvent event) {}
+    public static void registerModels(ModelRegistryEvent event) {
+        MOPMetaBlocks.registerItemModels();
+    }
 }

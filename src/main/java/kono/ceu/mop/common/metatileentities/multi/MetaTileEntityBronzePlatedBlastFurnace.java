@@ -14,7 +14,6 @@ import org.apache.commons.lang3.ArrayUtils;
 import org.jetbrains.annotations.NotNull;
 
 import gregtech.api.GTValues;
-import gregtech.api.gui.GuiTextures;
 import gregtech.api.gui.ModularUI;
 import gregtech.api.gui.widgets.LabelWidget;
 import gregtech.api.gui.widgets.ProgressWidget;
@@ -27,7 +26,6 @@ import gregtech.api.metatileentity.multiblock.RecipeMapPrimitiveMultiblockContro
 import gregtech.api.pattern.BlockPattern;
 import gregtech.api.pattern.FactoryBlockPattern;
 import gregtech.api.pattern.TraceabilityPredicate;
-import gregtech.api.recipes.RecipeMaps;
 import gregtech.api.util.GTUtility;
 import gregtech.client.particle.VanillaParticleEffects;
 import gregtech.client.renderer.CubeRendererState;
@@ -37,10 +35,11 @@ import gregtech.client.renderer.cclop.LightMapOperation;
 import gregtech.client.renderer.texture.Textures;
 import gregtech.client.utils.BloomEffectUtil;
 import gregtech.common.ConfigHolder;
-import gregtech.common.blocks.BlockMetalCasing;
-import gregtech.common.blocks.MetaBlocks;
 
 import kono.ceu.mop.api.recipes.MOPRecipeMaps;
+import kono.ceu.mop.client.MOPTextures;
+import kono.ceu.mop.common.blocks.MOPBlockPrimitiveCasing;
+import kono.ceu.mop.common.blocks.MOPMetaBlocks;
 
 import codechicken.lib.render.CCRenderState;
 import codechicken.lib.render.pipeline.IVertexOperation;
@@ -69,10 +68,12 @@ public class MetaTileEntityBronzePlatedBlastFurnace extends RecipeMapPrimitiveMu
                 .aisle("XXX", "XXX", "XXX", "XXX")
                 .aisle("XXX", "X&X", "X#X", "X#X")
                 .aisle("XXX", "XYX", "XXX", "XXX")
-                .where('X', states(MetaBlocks.METAL_CASING.getState(BlockMetalCasing.MetalCasingType.BRONZE_BRICKS)))
+                .where('X',
+                        states(MOPMetaBlocks.MOP_BLOCK_PRIMITIVE_CASING
+                                .getState(MOPBlockPrimitiveCasing.CasingType.BRONZE_FIREBRICK)))
                 .where('#', air())
                 .where('&', air().or(SNOW_PREDICATE)) // this won't stay in the structure, and will be broken while
-                // running
+                                                      // running
                 .where('Y', selfPredicate())
                 .build();
     }
@@ -80,30 +81,36 @@ public class MetaTileEntityBronzePlatedBlastFurnace extends RecipeMapPrimitiveMu
     @SideOnly(Side.CLIENT)
     @Override
     public ICubeRenderer getBaseTexture(IMultiblockPart sourcePart) {
-        return Textures.BRONZE_PLATED_BRICKS;
+        return MOPTextures.BRONZE_FIREBRICK;
     }
 
     @Override
     protected ModularUI.Builder createUITemplate(EntityPlayer entityPlayer) {
-        return ModularUI.builder(GuiTextures.PRIMITIVE_BACKGROUND, 176, 166)
+        return ModularUI.builder(MOPTextures.PRIMITIVE_BACKGROUND_BRONZE, 176, 166)
                 .shouldColor(false)
                 .widget(new LabelWidget(5, 5, getMetaFullName()))
                 .widget(new SlotWidget(importItems, 0, 52, 20, true, true)
-                        .setBackgroundTexture(GuiTextures.PRIMITIVE_SLOT, GuiTextures.PRIMITIVE_INGOT_OVERLAY))
+                        .setBackgroundTexture(MOPTextures.PRIMITIVE_SLOT_BRONZE,
+                                MOPTextures.PRIMITIVE_INGOT_OVERLAY_BRONZE))
                 .widget(new SlotWidget(importItems, 1, 52, 38, true, true)
-                        .setBackgroundTexture(GuiTextures.PRIMITIVE_SLOT, GuiTextures.PRIMITIVE_DUST_OVERLAY))
+                        .setBackgroundTexture(MOPTextures.PRIMITIVE_SLOT_BRONZE,
+                                MOPTextures.PRIMITIVE_DUST_OVERLAY_BRONZE))
                 .widget(new SlotWidget(importItems, 2, 52, 56, true, true)
-                        .setBackgroundTexture(GuiTextures.PRIMITIVE_SLOT, GuiTextures.PRIMITIVE_FURNACE_OVERLAY))
+                        .setBackgroundTexture(MOPTextures.PRIMITIVE_SLOT_BRONZE,
+                                MOPTextures.PRIMITIVE_FURNACE_OVERLAY_BRONZE))
                 .widget(new RecipeProgressWidget(recipeMapWorkable::getProgressPercent, 77, 39, 20, 15,
-                        GuiTextures.PRIMITIVE_BLAST_FURNACE_PROGRESS_BAR, ProgressWidget.MoveType.HORIZONTAL,
-                        RecipeMaps.PRIMITIVE_BLAST_FURNACE_RECIPES))
+                        MOPTextures.BRONZE_PRIMITIVE_BLAST_FURNACE_PROGRESS_BAR, ProgressWidget.MoveType.HORIZONTAL,
+                        MOPRecipeMaps.BRONZE_PLATED_BLAST_FURNACE_RECIPES))
                 .widget(new SlotWidget(exportItems, 0, 104, 38, true, false)
-                        .setBackgroundTexture(GuiTextures.PRIMITIVE_SLOT, GuiTextures.PRIMITIVE_INGOT_OVERLAY))
+                        .setBackgroundTexture(MOPTextures.PRIMITIVE_SLOT_BRONZE,
+                                MOPTextures.PRIMITIVE_INGOT_OVERLAY_BRONZE))
                 .widget(new SlotWidget(exportItems, 1, 122, 38, true, false)
-                        .setBackgroundTexture(GuiTextures.PRIMITIVE_SLOT, GuiTextures.PRIMITIVE_DUST_OVERLAY))
+                        .setBackgroundTexture(MOPTextures.PRIMITIVE_SLOT_BRONZE,
+                                MOPTextures.PRIMITIVE_DUST_OVERLAY_BRONZE))
                 .widget(new SlotWidget(exportItems, 2, 140, 38, true, false)
-                        .setBackgroundTexture(GuiTextures.PRIMITIVE_SLOT, GuiTextures.PRIMITIVE_DUST_OVERLAY))
-                .bindPlayerInventory(entityPlayer.inventory, GuiTextures.PRIMITIVE_SLOT, 0);
+                        .setBackgroundTexture(MOPTextures.PRIMITIVE_SLOT_BRONZE,
+                                MOPTextures.PRIMITIVE_DUST_OVERLAY_BRONZE))
+                .bindPlayerInventory(entityPlayer.inventory, MOPTextures.PRIMITIVE_SLOT_BRONZE, 0);
     }
 
     @Override

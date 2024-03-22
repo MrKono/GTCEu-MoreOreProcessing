@@ -1,0 +1,19 @@
+{
+  "forge_marker" : 1,
+  "defaults" : {
+    "model" : "minecraft:cube_all",
+    "textures": {
+      "all": "gregtech:blocks/rendering_error"
+    }
+  },
+  "variants" : {
+    "variant" : {
+    	"bronze_firebrick" : {
+    		"model" : "minecraft:cube_all",
+    		"textures" : {
+    			"all" : "gregtech:blocks/primitive/bronze_firebrick"
+    			}
+    		}
+    	}
+    }
+}
