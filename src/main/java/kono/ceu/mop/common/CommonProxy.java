@@ -46,6 +46,7 @@ public class CommonProxy {
         registry.register(MOPMetaBlocks.MOP_BLOCK_PRIMITIVE_CASING);
     }
 
+    @SubscribeEvent
     public static void registerItems(RegistryEvent.Register<Item> event) {
         IForgeRegistry<Item> registry = event.getRegistry();
 
