@@ -10,7 +10,7 @@ import stanhebben.zenscript.annotations.ZenProperty;
 
 import static gregtech.api.recipes.RecipeMaps.PRIMITIVE_BLAST_FURNACE_RECIPES;
 
-@ZenClass("mods.gregtech.recipe.RecipeMaps")
+@ZenClass("mods.mop.recipe.MOPRecipeMaps")
 @ZenRegister
 public class MOPRecipeMaps {
 
