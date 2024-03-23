@@ -8,10 +8,10 @@
   },
   "variants": {
     "variant": {
-      "bronze_firebrick": {
+      "bronze_plated_firebricks": {
       "model": "minecraft:cube_all",
         "textures": {
-          "all": "gregtech:blocks/primitive/bronze_firebrick"
+          "all": "gregtech:blocks/primitive/bronze_plated_firebricks"
         }
       }
     }

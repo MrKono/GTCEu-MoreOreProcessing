@@ -22,7 +22,7 @@ public class MOPBlockPrimitiveCasing extends VariantBlock<MOPBlockPrimitiveCasin
         setResistance(10.0f);
         setSoundType(SoundType.METAL);
         setHarvestLevel(ToolClasses.WRENCH, 1);
-        setDefaultState(getState(CasingType.BRONZE_FIREBRICK));
+        setDefaultState(getState(CasingType.BRONZE_PLATED_FIREBRICKS));
         setRegistryName("mop_primitive_casing");
     }
 
@@ -39,7 +39,7 @@ public class MOPBlockPrimitiveCasing extends VariantBlock<MOPBlockPrimitiveCasin
 
     public enum CasingType implements IStringSerializable {
 
-        BRONZE_FIREBRICK("bronze_firebrick");
+        BRONZE_PLATED_FIREBRICKS("bronze_plated_firebricks");
 
         private final String name;
 

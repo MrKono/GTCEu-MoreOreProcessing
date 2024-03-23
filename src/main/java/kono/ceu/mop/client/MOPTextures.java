@@ -24,11 +24,11 @@ public class MOPTextures {
             .fullImage("textures/gui/primitive/bronze/progress_bar_bronze_primitive_blast_furnace.png");
 
     // Blocks
-    public static SimpleOverlayRenderer BRONZE_FIREBRICK;
+    public static SimpleOverlayRenderer BRONZE_FIREBRICKS;
 
     private MOPTextures() {}
 
     public static void preInit() {
-        BRONZE_FIREBRICK = new SimpleOverlayRenderer("primitive/bronze_firebrick");
+        BRONZE_FIREBRICKS = new SimpleOverlayRenderer("primitive/bronze_plated_firebricks");
     }
 }
