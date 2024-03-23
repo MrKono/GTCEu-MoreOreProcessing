@@ -38,7 +38,7 @@ import gregtech.common.ConfigHolder;
 
 import kono.ceu.mop.api.recipes.MOPRecipeMaps;
 import kono.ceu.mop.client.MOPTextures;
-import kono.ceu.mop.common.blocks.MOPBlockPrimitiveCasing;
+import kono.ceu.mop.common.blocks.Casing.MOPBlockPrimitiveCasing;
 import kono.ceu.mop.common.blocks.MOPMetaBlocks;
 
 import codechicken.lib.render.CCRenderState;

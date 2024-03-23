@@ -2,7 +2,11 @@ package kono.ceu.mop.client;
 
 import gregtech.api.gui.resources.TextureArea;
 import gregtech.client.renderer.texture.cube.SimpleOverlayRenderer;
+import kono.ceu.mop.api.MOPValues;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.relauncher.Side;
 
+@Mod.EventBusSubscriber(modid = MOPValues.MODID, value = Side.CLIENT)
 public class MOPTextures {
 
     // GUI
@@ -22,7 +26,9 @@ public class MOPTextures {
     // Blocks
     public static SimpleOverlayRenderer BRONZE_FIREBRICK;
 
-    public static void textures() {
-        BRONZE_FIREBRICK = new SimpleOverlayRenderer("blocks/primitive/bronze_firebrick");
+    private MOPTextures() {}
+
+    public static void preInit() {
+        BRONZE_FIREBRICK = new SimpleOverlayRenderer("primitive/bronze_firebrick");
     }
 }

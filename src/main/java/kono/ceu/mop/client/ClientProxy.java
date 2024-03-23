@@ -14,8 +14,8 @@ public class ClientProxy extends CommonProxy {
 
     @Override
     public void preInit(FMLPreInitializationEvent event) {
-        MOPTextures.textures();
         super.preInit(event);
+        MOPTextures.preInit();
     }
 
     @SubscribeEvent

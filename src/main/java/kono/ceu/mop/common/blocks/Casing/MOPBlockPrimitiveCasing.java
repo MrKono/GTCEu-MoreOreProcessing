@@ -1,4 +1,4 @@
-package kono.ceu.mop.common.blocks;
+package kono.ceu.mop.common.blocks.Casing;
 
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -17,18 +17,24 @@ public class MOPBlockPrimitiveCasing extends VariantBlock<MOPBlockPrimitiveCasin
 
     public MOPBlockPrimitiveCasing() {
         super(Material.IRON);
-        setTranslationKey("solid_casing");
+        setTranslationKey("primitive_casing");
         setHardness(5.0f);
         setResistance(10.0f);
         setSoundType(SoundType.METAL);
-        setHarvestLevel(ToolClasses.WRENCH, 2);
+        setHarvestLevel(ToolClasses.WRENCH, 1);
         setDefaultState(getState(CasingType.BRONZE_FIREBRICK));
+        setRegistryName("mop_primitive_casing");
     }
 
     @Override
     public boolean canCreatureSpawn(@NotNull IBlockState state, @NotNull IBlockAccess world,
                                     @NotNull BlockPos pos, @NotNull EntityLiving.SpawnPlacementType type) {
         return false;
+    }
+
+    @Override
+    public IBlockState getState(CasingType variant) {
+        return super.getState(variant);
     }
 
     public enum CasingType implements IStringSerializable {

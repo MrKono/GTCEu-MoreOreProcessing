@@ -33,7 +33,6 @@ import kono.ceu.mop.recipes.PBFRecipe;
 public class CommonProxy {
 
     public void preInit(FMLPreInitializationEvent event) {
-        MOPMetaBlocks.init();
         MOPMetaTileEntities.init();
     }
 
@@ -44,13 +43,13 @@ public class CommonProxy {
     @SubscribeEvent
     public static void registerBlocks(RegistryEvent.Register<Block> event) {
         IForgeRegistry<Block> registry = event.getRegistry();
-        registry.register(MOP_BLOCK_PRIMITIVE_CASING);
+        registry.register(MOPMetaBlocks.MOP_BLOCK_PRIMITIVE_CASING);
     }
 
     public static void registerItems(RegistryEvent.Register<Item> event) {
         IForgeRegistry<Item> registry = event.getRegistry();
 
-        registry.register(createItemBlock(MOP_BLOCK_PRIMITIVE_CASING, VariantItemBlock::new));
+        registry.register(createItemBlock(MOPMetaBlocks.MOP_BLOCK_PRIMITIVE_CASING, VariantItemBlock::new));
     }
 
     private static <T extends Block> ItemBlock createItemBlock(T block, Function<T, ItemBlock> producer) {

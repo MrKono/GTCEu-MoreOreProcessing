@@ -1,5 +1,6 @@
 package kono.ceu.mop.common.blocks;
 
+import kono.ceu.mop.common.blocks.Casing.MOPBlockPrimitiveCasing;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -12,12 +13,9 @@ import gregtech.common.blocks.MetaBlocks;
 
 public class MOPMetaBlocks {
 
-    public static MOPBlockPrimitiveCasing MOP_BLOCK_PRIMITIVE_CASING;
+    private MOPMetaBlocks() {}
 
-    public static void init() {
-        MOP_BLOCK_PRIMITIVE_CASING = new MOPBlockPrimitiveCasing();
-        MOP_BLOCK_PRIMITIVE_CASING.setRegistryName("mop_primitive_casing");
-    }
+    public static final MOPBlockPrimitiveCasing MOP_BLOCK_PRIMITIVE_CASING = new MOPBlockPrimitiveCasing();
 
     @SideOnly(Side.CLIENT)
     public static void registerItemModels() {
@@ -25,7 +23,7 @@ public class MOPMetaBlocks {
     }
 
     @SideOnly(Side.CLIENT)
-    public static void registerItemModel(Block block) {
+    private static void registerItemModel(Block block) {
         for (IBlockState state : block.getBlockState().getValidStates()) {
             // noinspection ConstantConditions
             ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block),
