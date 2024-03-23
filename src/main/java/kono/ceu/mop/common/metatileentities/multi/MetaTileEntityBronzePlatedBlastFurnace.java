@@ -70,7 +70,7 @@ public class MetaTileEntityBronzePlatedBlastFurnace extends RecipeMapPrimitiveMu
                 .aisle("XXX", "XYX", "XXX", "XXX")
                 .where('X',
                         states(MOPMetaBlocks.MOP_BLOCK_PRIMITIVE_CASING
-                                .getState(MOPBlockPrimitiveCasing.CasingType.BRONZE_FIREBRICK)))
+                                .getState(MOPBlockPrimitiveCasing.CasingType.BRONZE_PLATED_FIREBRICKS)))
                 .where('#', air())
                 .where('&', air().or(SNOW_PREDICATE)) // this won't stay in the structure, and will be broken while
                                                       // running
@@ -81,7 +81,7 @@ public class MetaTileEntityBronzePlatedBlastFurnace extends RecipeMapPrimitiveMu
     @SideOnly(Side.CLIENT)
     @Override
     public ICubeRenderer getBaseTexture(IMultiblockPart sourcePart) {
-        return MOPTextures.BRONZE_FIREBRICK;
+        return MOPTextures.BRONZE_FIREBRICKS;
     }
 
     @Override
@@ -101,13 +101,22 @@ public class MetaTileEntityBronzePlatedBlastFurnace extends RecipeMapPrimitiveMu
                 .widget(new RecipeProgressWidget(recipeMapWorkable::getProgressPercent, 77, 39, 20, 15,
                         MOPTextures.BRONZE_PRIMITIVE_BLAST_FURNACE_PROGRESS_BAR, ProgressWidget.MoveType.HORIZONTAL,
                         MOPRecipeMaps.BRONZE_PLATED_BLAST_FURNACE_RECIPES))
-                .widget(new SlotWidget(exportItems, 0, 104, 38, true, false)
+                .widget(new SlotWidget(exportItems, 0, 104, 29, true, false)
                         .setBackgroundTexture(MOPTextures.PRIMITIVE_SLOT_BRONZE,
                                 MOPTextures.PRIMITIVE_INGOT_OVERLAY_BRONZE))
-                .widget(new SlotWidget(exportItems, 1, 122, 38, true, false)
+                .widget(new SlotWidget(exportItems, 1, 122, 29, true, false)
+                        .setBackgroundTexture(MOPTextures.PRIMITIVE_SLOT_BRONZE,
+                                MOPTextures.PRIMITIVE_INGOT_OVERLAY_BRONZE))
+                .widget(new SlotWidget(exportItems, 2, 140, 29, true, false)
+                        .setBackgroundTexture(MOPTextures.PRIMITIVE_SLOT_BRONZE,
+                                MOPTextures.PRIMITIVE_INGOT_OVERLAY_BRONZE))
+                .widget(new SlotWidget(exportItems, 3, 104, 47, true, false)
                         .setBackgroundTexture(MOPTextures.PRIMITIVE_SLOT_BRONZE,
                                 MOPTextures.PRIMITIVE_DUST_OVERLAY_BRONZE))
-                .widget(new SlotWidget(exportItems, 2, 140, 38, true, false)
+                .widget(new SlotWidget(exportItems, 4, 122, 47, true, false)
+                        .setBackgroundTexture(MOPTextures.PRIMITIVE_SLOT_BRONZE,
+                                MOPTextures.PRIMITIVE_DUST_OVERLAY_BRONZE))
+                .widget(new SlotWidget(exportItems, 5, 140, 47, true, false)
                         .setBackgroundTexture(MOPTextures.PRIMITIVE_SLOT_BRONZE,
                                 MOPTextures.PRIMITIVE_DUST_OVERLAY_BRONZE))
                 .bindPlayerInventory(entityPlayer.inventory, MOPTextures.PRIMITIVE_SLOT_BRONZE, 0);
