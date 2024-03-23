@@ -1,0 +1,10 @@
+# Blocks
+# Primitive Casing
+tile.primitive_casing.bronze_plated_firebricks.name=Bronze Plated Firebricks
+
+# Machines
+# multi
+mop.machine.bronze_plated_blast_furnace.name=Bronze Plated Blast Furnace
+
+# Recipe Maps
+recipemap.bronze_plated_blast_furnace.name=Bronze Plated Blast Furnace
