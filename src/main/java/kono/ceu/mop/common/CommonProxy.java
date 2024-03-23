@@ -5,6 +5,8 @@ import static kono.ceu.mop.common.blocks.MOPMetaBlocks.MOP_BLOCK_PRIMITIVE_CASIN
 import java.util.Objects;
 import java.util.function.Function;
 
+import kono.ceu.mop.recipes.MOPBlockRecipe;
+import kono.ceu.mop.recipes.MOPMetaTileEntityRecipe;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
@@ -76,6 +78,8 @@ public class CommonProxy {
     @SubscribeEvent
     public static void registerRecipesNormal(RegistryEvent.Register<IRecipe> event) {
         PBFRecipe.init();
+        MOPMetaTileEntityRecipe.init();
+        MOPBlockRecipe.init();
     }
 
     @SubscribeEvent(priority = EventPriority.LOW)
