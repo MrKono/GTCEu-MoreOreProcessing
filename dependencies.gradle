@@ -47,4 +47,8 @@ dependencies {
     devOnlyNonPublishable(rfg.deobf("curse.maven:gregtech-ce-unofficial-557242:5121638")) // CEu 2.8.7
     //devOnlyNonPublishable(rfg.deobf("curse.maven:gregicality-multiblocks-564858:5121714")) // GCYM 1.2.8
 
+
+    compileOnly rfg.deobf("curse.maven:endercore-231868:4671384") // EnderCore 0.5.78
+    //runtimeOnlyNonPublishable (files("libs/EnderCore-1.12.2-0.5.78-core.jar"))
+
 }
