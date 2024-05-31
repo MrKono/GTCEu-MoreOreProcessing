@@ -1,9 +1,10 @@
 package kono.ceu.mop;
 
-import com.google.common.collect.Lists;
-import zone.rong.mixinbooter.ILateMixinLoader;
-
 import java.util.List;
+
+import com.google.common.collect.Lists;
+
+import zone.rong.mixinbooter.ILateMixinLoader;
 
 public class MOPMixinLoader implements ILateMixinLoader {
 
