@@ -1,10 +1,12 @@
 package kono.ceu.mop.client;
 
-import gregtech.api.gui.resources.TextureArea;
-import gregtech.client.renderer.texture.cube.SimpleOverlayRenderer;
-import kono.ceu.mop.api.MOPValues;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.relauncher.Side;
+
+import gregtech.api.gui.resources.TextureArea;
+import gregtech.client.renderer.texture.cube.SimpleOverlayRenderer;
+
+import kono.ceu.mop.api.MOPValues;
 
 @Mod.EventBusSubscriber(modid = MOPValues.MODID, value = Side.CLIENT)
 public class MOPTextures {

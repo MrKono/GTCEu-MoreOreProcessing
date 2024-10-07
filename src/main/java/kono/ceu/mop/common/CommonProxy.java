@@ -1,12 +1,8 @@
 package kono.ceu.mop.common;
 
-import static kono.ceu.mop.common.blocks.MOPMetaBlocks.MOP_BLOCK_PRIMITIVE_CASING;
-
 import java.util.Objects;
 import java.util.function.Function;
 
-import kono.ceu.mop.recipes.MOPBlockRecipe;
-import kono.ceu.mop.recipes.MOPMetaTileEntityRecipe;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
@@ -29,6 +25,8 @@ import kono.ceu.mop.api.MOPValues;
 import kono.ceu.mop.api.recipes.MOPRecipeMaps;
 import kono.ceu.mop.common.blocks.MOPMetaBlocks;
 import kono.ceu.mop.common.metatileentities.MOPMetaTileEntities;
+import kono.ceu.mop.recipes.MOPBlockRecipe;
+import kono.ceu.mop.recipes.MOPMetaTileEntityRecipe;
 import kono.ceu.mop.recipes.PBFRecipe;
 
 @Mod.EventBusSubscriber(modid = MOPValues.MODID)
