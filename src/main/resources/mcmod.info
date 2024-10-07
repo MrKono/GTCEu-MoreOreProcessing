@@ -4,7 +4,7 @@
     "description": "Adding more ore processing to GTCEu",
     "version": "${version}",
     "mcversion": "${mcversion}",
-    "logoFile": "",
+    "logoFile": "resources/assets/mop/textures/logo/logo.png",
     "url": "",
     "authorList": [],
     "credits": "",
