@@ -22,6 +22,7 @@ import net.minecraft.world.World;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
@@ -39,13 +40,19 @@ import kono.ceu.mop.MOPConfig;
 @Mixin(value = MetaPrefixItem.class, remap = false)
 public abstract class MixinMetaPrefixItem {
 
+    @Unique
     private final boolean easyCooling = MOPConfig.difficulty.easyCooling;
+    @Unique
     private final boolean easyCleaning = MOPConfig.difficulty.easyCleaning;
+    @Unique
     private final boolean hardCleaning = MOPConfig.difficulty.hardCleaning;
 
+    @Unique
     private final MaterialRegistry registry;
+    @Unique
     private final OrePrefix prefix;
 
+    @Unique
     private static final Map<OrePrefix, OrePrefix> hotMap = new HashMap<>();
 
     static {
