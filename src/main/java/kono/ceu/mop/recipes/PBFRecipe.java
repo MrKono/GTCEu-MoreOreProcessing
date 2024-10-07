@@ -1,10 +1,8 @@
 package kono.ceu.mop.recipes;
 
-import static gregtech.api.recipes.RecipeMaps.PRIMITIVE_BLAST_FURNACE_RECIPES;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.loaders.OreDictionaryLoader.OREDICT_BLOCK_FUEL_COKE;
-import static gregtech.loaders.OreDictionaryLoader.OREDICT_FUEL_COKE;
 import static kono.ceu.mop.api.recipes.MOPRecipeMaps.BRONZE_PLATED_BLAST_FURNACE_RECIPES;
 
 import org.jetbrains.annotations.Nullable;
@@ -66,31 +64,6 @@ public class PBFRecipe {
                                          @Nullable Material outputSub, int outputSubCount) {
         if (inputSubOrePrefix == null) {
             if (outputSubOrePrefix == null) {
-                PRIMITIVE_BLAST_FURNACE_RECIPES.recipeBuilder()
-                        .input(dust, input, 3).input(gem, Coal, 2)
-                        .output(ingot, outputMain, 2).output(dustTiny, DarkAsh, 2)
-                        .duration(2400).buildAndRegister();
-                PRIMITIVE_BLAST_FURNACE_RECIPES.recipeBuilder()
-                        .input(dust, input, 3).input(dust, Coal, 2)
-                        .output(ingot, outputMain, 2).output(dustTiny, DarkAsh, 2)
-                        .duration(2400).buildAndRegister();
-                PRIMITIVE_BLAST_FURNACE_RECIPES.recipeBuilder()
-                        .input(dust, input, 3).input(gem, Charcoal, 2)
-                        .output(ingot, outputMain, 2).output(dustTiny, DarkAsh, 2)
-                        .duration(2400).buildAndRegister();
-                PRIMITIVE_BLAST_FURNACE_RECIPES.recipeBuilder()
-                        .input(dust, input, 3).input(dust, Charcoal, 2)
-                        .output(ingot, outputMain, 2).output(dustTiny, DarkAsh, 2)
-                        .duration(2400).buildAndRegister();
-                PRIMITIVE_BLAST_FURNACE_RECIPES.recipeBuilder()
-                        .input(dust, input, 3).input(OREDICT_FUEL_COKE)
-                        .output(ingot, outputMain, 2).output(dustTiny, Ash)
-                        .duration(2000).buildAndRegister();
-                PRIMITIVE_BLAST_FURNACE_RECIPES.recipeBuilder()
-                        .input(dust, input, 3).input(dust, Coke)
-                        .output(ingot, outputMain, 2).output(dustTiny, Ash)
-                        .duration(2000).buildAndRegister();
-
                 BRONZE_PLATED_BLAST_FURNACE_RECIPES.recipeBuilder()
                         .input(dust, input, 15).input(block, Charcoal)
                         .output(ingot, outputMain, 10).output(dust, DarkAsh)
@@ -104,37 +77,6 @@ public class PBFRecipe {
                         .output(ingot, outputMain, 20).output(dust, Ash)
                         .duration(20000).buildAndRegister();
             } else {
-                PRIMITIVE_BLAST_FURNACE_RECIPES.recipeBuilder()
-                        .input(dust, input, 3).input(gem, Coal, 2)
-                        .output(ingot, outputMain, 2).output(outputSubOrePrefix, outputSub, outputSubCount)
-                        .output(dustTiny, DarkAsh, 2)
-                        .duration(2400).buildAndRegister();
-                PRIMITIVE_BLAST_FURNACE_RECIPES.recipeBuilder()
-                        .input(dust, input, 3).input(dust, Coal, 2)
-                        .output(ingot, outputMain, 2).output(outputSubOrePrefix, outputSub, outputSubCount)
-                        .output(dustTiny, DarkAsh, 2)
-                        .duration(2400).buildAndRegister();
-                PRIMITIVE_BLAST_FURNACE_RECIPES.recipeBuilder()
-                        .input(dust, input, 3).input(gem, Charcoal, 2)
-                        .output(ingot, outputMain, 2).output(outputSubOrePrefix, outputSub, outputSubCount)
-                        .output(dustTiny, DarkAsh, 2)
-                        .duration(2400).buildAndRegister();
-                PRIMITIVE_BLAST_FURNACE_RECIPES.recipeBuilder()
-                        .input(dust, input, 3).input(dust, Charcoal, 2)
-                        .output(ingot, outputMain, 2).output(outputSubOrePrefix, outputSub, outputSubCount)
-                        .output(dustTiny, DarkAsh, 2)
-                        .duration(2400).buildAndRegister();
-                PRIMITIVE_BLAST_FURNACE_RECIPES.recipeBuilder()
-                        .input(dust, input, 3).input(OREDICT_FUEL_COKE)
-                        .output(ingot, outputMain, 2).output(outputSubOrePrefix, outputSub, outputSubCount)
-                        .output(dustTiny, Ash)
-                        .duration(2000).buildAndRegister();
-                PRIMITIVE_BLAST_FURNACE_RECIPES.recipeBuilder()
-                        .input(dust, input, 3).input(dust, Coke)
-                        .output(ingot, outputMain, 2).output(outputSubOrePrefix, outputSub, outputSubCount)
-                        .output(dustTiny, Ash)
-                        .duration(2000).buildAndRegister();
-
                 BRONZE_PLATED_BLAST_FURNACE_RECIPES.recipeBuilder()
                         .input(dust, input, 15).input(block, Charcoal)
                         .output(ingot, outputMain, 10).output(outputSubOrePrefix, outputSub, outputSubCount * 5)
@@ -153,37 +95,6 @@ public class PBFRecipe {
             }
         } else {
             if (outputSubOrePrefix == null) {
-                PRIMITIVE_BLAST_FURNACE_RECIPES.recipeBuilder()
-                        .input(dust, input, 3).input(inputSubOrePrefix, inputSub, inputSubCount)
-                        .input(gem, Coal, 2)
-                        .output(ingot, outputMain, 2).output(dustTiny, DarkAsh, 2)
-                        .duration(2400).buildAndRegister();
-                PRIMITIVE_BLAST_FURNACE_RECIPES.recipeBuilder()
-                        .input(dust, input, 3).input(inputSubOrePrefix, inputSub, inputSubCount)
-                        .input(dust, Coal, 2)
-                        .output(ingot, outputMain, 2).output(dustTiny, DarkAsh, 2)
-                        .duration(2400).buildAndRegister();
-                PRIMITIVE_BLAST_FURNACE_RECIPES.recipeBuilder()
-                        .input(dust, input, 3).input(inputSubOrePrefix, inputSub, inputSubCount)
-                        .input(gem, Charcoal, 2)
-                        .output(ingot, outputMain, 2).output(dustTiny, DarkAsh, 2)
-                        .duration(2400).buildAndRegister();
-                PRIMITIVE_BLAST_FURNACE_RECIPES.recipeBuilder()
-                        .input(dust, input, 3).input(inputSubOrePrefix, inputSub, inputSubCount)
-                        .input(dust, Charcoal, 2)
-                        .output(ingot, outputMain, 2).output(dustTiny, DarkAsh, 2)
-                        .duration(2400).buildAndRegister();
-                PRIMITIVE_BLAST_FURNACE_RECIPES.recipeBuilder()
-                        .input(dust, input, 3).input(inputSubOrePrefix, inputSub, inputSubCount)
-                        .input(OREDICT_FUEL_COKE)
-                        .output(ingot, outputMain, 2).output(dustTiny, Ash)
-                        .duration(2000).buildAndRegister();
-                PRIMITIVE_BLAST_FURNACE_RECIPES.recipeBuilder()
-                        .input(dust, input, 3).input(inputSubOrePrefix, inputSub, inputSubCount)
-                        .input(dust, Coke)
-                        .output(ingot, outputMain, 2).output(dustTiny, Ash)
-                        .duration(2000).buildAndRegister();
-
                 BRONZE_PLATED_BLAST_FURNACE_RECIPES.recipeBuilder()
                         .input(dust, input, 15).input(inputSubOrePrefix, inputSub, inputSubCount * 5)
                         .input(block, Charcoal)
@@ -203,39 +114,6 @@ public class PBFRecipe {
                         .output(dust, Ash)
                         .duration(20000).buildAndRegister();
             } else {
-                PRIMITIVE_BLAST_FURNACE_RECIPES.recipeBuilder()
-                        .input(dust, input, 3).input(inputSubOrePrefix, inputSub, inputSubCount).input(gem, Coal, 2)
-                        .output(ingot, outputMain, 2).output(outputSubOrePrefix, outputSub, outputSubCount)
-                        .output(dustTiny, DarkAsh, 2)
-                        .duration(2400).buildAndRegister();
-                PRIMITIVE_BLAST_FURNACE_RECIPES.recipeBuilder()
-                        .input(dust, input, 3).input(inputSubOrePrefix, inputSub, inputSubCount).input(dust, Coal, 2)
-                        .output(ingot, outputMain, 2).output(outputSubOrePrefix, outputSub, outputSubCount)
-                        .output(dustTiny, DarkAsh, 2)
-                        .duration(2400).buildAndRegister();
-                PRIMITIVE_BLAST_FURNACE_RECIPES.recipeBuilder()
-                        .input(dust, input, 3).input(inputSubOrePrefix, inputSub, inputSubCount).input(gem, Charcoal, 2)
-                        .output(ingot, outputMain, 2).output(outputSubOrePrefix, outputSub, outputSubCount)
-                        .output(dustTiny, DarkAsh, 2)
-                        .duration(2400).buildAndRegister();
-                PRIMITIVE_BLAST_FURNACE_RECIPES.recipeBuilder()
-                        .input(dust, input, 3).input(inputSubOrePrefix, inputSub, inputSubCount)
-                        .input(dust, Charcoal, 2)
-                        .output(ingot, outputMain, 2).output(outputSubOrePrefix, outputSub, outputSubCount)
-                        .output(dustTiny, DarkAsh, 2)
-                        .duration(2400).buildAndRegister();
-                PRIMITIVE_BLAST_FURNACE_RECIPES.recipeBuilder()
-                        .input(dust, input, 3).input(inputSubOrePrefix, inputSub, inputSubCount)
-                        .input(OREDICT_FUEL_COKE)
-                        .output(ingot, outputMain, 2).output(outputSubOrePrefix, outputSub, outputSubCount)
-                        .output(dustTiny, Ash)
-                        .duration(2000).buildAndRegister();
-                PRIMITIVE_BLAST_FURNACE_RECIPES.recipeBuilder()
-                        .input(dust, input, 3).input(inputSubOrePrefix, inputSub, inputSubCount).input(dust, Coke)
-                        .output(ingot, outputMain, 2).output(outputSubOrePrefix, outputSub, outputSubCount)
-                        .output(dustTiny, Ash)
-                        .duration(2000).buildAndRegister();
-
                 BRONZE_PLATED_BLAST_FURNACE_RECIPES.recipeBuilder()
                         .input(dust, input, 15).input(inputSubOrePrefix, inputSub, inputSubCount * 5)
                         .input(block, Charcoal)

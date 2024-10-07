@@ -68,7 +68,7 @@ public class CommonProxy {
             MOPRecipeMaps.BRONZE_PLATED_BLAST_FURNACE_RECIPES.recipeBuilder()
                     .inputs(builder.getInputs().toArray(new GTRecipeInput[0]))
                     .outputs(builder.getOutputs())
-                    .duration(builder.getDuration())
+                    .duration((int) (builder.getDuration() * 0.75))
                     .buildAndRegister();
         });
     }

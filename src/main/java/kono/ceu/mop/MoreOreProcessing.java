@@ -15,7 +15,7 @@ import kono.ceu.mop.common.CommonProxy;
      name = MOPValues.MODNAME,
      acceptedMinecraftVersions = "[1.12, 1.12.2]",
      version = Tags.VERSION,
-     dependencies = GTInternalTags.DEP_VERSION_STRING)
+     dependencies = GTInternalTags.DEP_VERSION_STRING + "required-after:mixinbooter;")
 @Mod.EventBusSubscriber(modid = MOPValues.MODID)
 public class MoreOreProcessing {
 

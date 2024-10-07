@@ -5,6 +5,7 @@ tile.primitive_casing.bronze_plated_firebricks.name=Bronze Plated Firebricks
 # Machines
 # multi
 mop.machine.bronze_plated_blast_furnace.name=Bronze Plated Blast Furnace
+mop.machine.bronze_reinforced_blast_furnace.name=Bronze Reinforced Blast Furnace
 
 # Recipe Maps
 recipemap.bronze_plated_blast_furnace.name=Bronze Plated Blast Furnace

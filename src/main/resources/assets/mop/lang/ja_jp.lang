@@ -1,10 +1,11 @@
 # Blocks
 # Primitive Casing
-tile.primitive_casing.bronze_plated_firebricks.name=ブロンズ強化耐火レンガ
+tile.primitive_casing.bronze_plated_firebricks.name=ブロンズ装甲耐火レンガ
 
 # Machines
 # multi
-mop.machine.bronze_plated_blast_furnace.name=ブロンズ強化高炉
+mop.machine.bronze_plated_blast_furnace.name=ブロンズ装甲高炉
+mop.machine.bronze_reinforced_blast_furnace.name=ブロンズ強化高炉
 
 # Recipe Maps
 recipemap.bronze_plated_blast_furnace.name=ブロンズ強化高炉

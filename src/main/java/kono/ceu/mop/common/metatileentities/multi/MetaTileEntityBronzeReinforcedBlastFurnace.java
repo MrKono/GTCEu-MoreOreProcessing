@@ -1,8 +1,5 @@
 package kono.ceu.mop.common.metatileentities.multi;
 
-import static gregtech.common.blocks.BlockMetalCasing.MetalCasingType.BRONZE_BRICKS;
-import static gregtech.common.blocks.MetaBlocks.METAL_CASING;
-
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -13,9 +10,8 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+import org.apache.commons.lang3.ArrayUtils;
 import org.jetbrains.annotations.NotNull;
-
-import com.llamalad7.mixinextras.lib.apache.commons.ArrayUtils;
 
 import gregtech.api.GTValues;
 import gregtech.api.gui.ModularUI;
@@ -30,7 +26,6 @@ import gregtech.api.metatileentity.multiblock.RecipeMapPrimitiveMultiblockContro
 import gregtech.api.pattern.BlockPattern;
 import gregtech.api.pattern.FactoryBlockPattern;
 import gregtech.api.pattern.TraceabilityPredicate;
-import gregtech.api.recipes.RecipeMaps;
 import gregtech.api.util.GTUtility;
 import gregtech.client.particle.VanillaParticleEffects;
 import gregtech.client.renderer.CubeRendererState;
@@ -41,7 +36,10 @@ import gregtech.client.renderer.texture.Textures;
 import gregtech.client.utils.BloomEffectUtil;
 import gregtech.common.ConfigHolder;
 
+import kono.ceu.mop.api.recipes.MOPRecipeMaps;
 import kono.ceu.mop.client.MOPTextures;
+import kono.ceu.mop.common.blocks.Casing.MOPBlockPrimitiveCasing;
+import kono.ceu.mop.common.blocks.MOPMetaBlocks;
 
 import codechicken.lib.render.CCRenderState;
 import codechicken.lib.render.pipeline.IVertexOperation;
@@ -49,18 +47,18 @@ import codechicken.lib.texture.TextureUtils;
 import codechicken.lib.vec.Cuboid6;
 import codechicken.lib.vec.Matrix4;
 
-public class MetaTileEntityBronzePlatedBlastFurnace extends RecipeMapPrimitiveMultiblockController {
+public class MetaTileEntityBronzeReinforcedBlastFurnace extends RecipeMapPrimitiveMultiblockController {
 
     private static final TraceabilityPredicate SNOW_PREDICATE = new TraceabilityPredicate(
             bws -> GTUtility.isBlockSnow(bws.getBlockState()));
 
-    public MetaTileEntityBronzePlatedBlastFurnace(ResourceLocation metaTileEntityId) {
-        super(metaTileEntityId, RecipeMaps.PRIMITIVE_BLAST_FURNACE_RECIPES);
+    public MetaTileEntityBronzeReinforcedBlastFurnace(ResourceLocation metaTileEntityId) {
+        super(metaTileEntityId, MOPRecipeMaps.BRONZE_PLATED_BLAST_FURNACE_RECIPES);
     }
 
     @Override
     public MetaTileEntity createMetaTileEntity(IGregTechTileEntity tileEntity) {
-        return new MetaTileEntityBronzePlatedBlastFurnace(metaTileEntityId);
+        return new MetaTileEntityBronzeReinforcedBlastFurnace(metaTileEntityId);
     }
 
     @NotNull
@@ -70,10 +68,12 @@ public class MetaTileEntityBronzePlatedBlastFurnace extends RecipeMapPrimitiveMu
                 .aisle("XXX", "XXX", "XXX", "XXX")
                 .aisle("XXX", "X&X", "X#X", "X#X")
                 .aisle("XXX", "XYX", "XXX", "XXX")
-                .where('X', states(METAL_CASING.getState(BRONZE_BRICKS)))
+                .where('X',
+                        states(MOPMetaBlocks.MOP_BLOCK_PRIMITIVE_CASING
+                                .getState(MOPBlockPrimitiveCasing.CasingType.BRONZE_PLATED_FIREBRICKS)))
                 .where('#', air())
                 .where('&', air().or(SNOW_PREDICATE)) // this won't stay in the structure, and will be broken while
-                // running
+                                                      // running
                 .where('Y', selfPredicate())
                 .build();
     }
@@ -81,7 +81,7 @@ public class MetaTileEntityBronzePlatedBlastFurnace extends RecipeMapPrimitiveMu
     @SideOnly(Side.CLIENT)
     @Override
     public ICubeRenderer getBaseTexture(IMultiblockPart sourcePart) {
-        return Textures.BRONZE_PLATED_BRICKS;
+        return MOPTextures.BRONZE_FIREBRICKS;
     }
 
     @Override
@@ -91,7 +91,7 @@ public class MetaTileEntityBronzePlatedBlastFurnace extends RecipeMapPrimitiveMu
                 .widget(new LabelWidget(5, 5, getMetaFullName()))
                 .widget(new SlotWidget(importItems, 0, 52, 20, true, true)
                         .setBackgroundTexture(MOPTextures.PRIMITIVE_SLOT_BRONZE,
-                                MOPTextures.PRIMITIVE_DUST_OVERLAY_BRONZE))
+                                MOPTextures.PRIMITIVE_INGOT_OVERLAY_BRONZE))
                 .widget(new SlotWidget(importItems, 1, 52, 38, true, true)
                         .setBackgroundTexture(MOPTextures.PRIMITIVE_SLOT_BRONZE,
                                 MOPTextures.PRIMITIVE_DUST_OVERLAY_BRONZE))
@@ -100,14 +100,23 @@ public class MetaTileEntityBronzePlatedBlastFurnace extends RecipeMapPrimitiveMu
                                 MOPTextures.PRIMITIVE_FURNACE_OVERLAY_BRONZE))
                 .widget(new RecipeProgressWidget(recipeMapWorkable::getProgressPercent, 77, 39, 20, 15,
                         MOPTextures.BRONZE_PRIMITIVE_BLAST_FURNACE_PROGRESS_BAR, ProgressWidget.MoveType.HORIZONTAL,
-                        RecipeMaps.PRIMITIVE_BLAST_FURNACE_RECIPES))
-                .widget(new SlotWidget(exportItems, 0, 104, 38, true, false)
+                        MOPRecipeMaps.BRONZE_PLATED_BLAST_FURNACE_RECIPES))
+                .widget(new SlotWidget(exportItems, 0, 104, 29, true, false)
+                        .setBackgroundTexture(MOPTextures.PRIMITIVE_SLOT_BRONZE,
+                                MOPTextures.PRIMITIVE_INGOT_OVERLAY_BRONZE))
+                .widget(new SlotWidget(exportItems, 1, 122, 29, true, false)
+                        .setBackgroundTexture(MOPTextures.PRIMITIVE_SLOT_BRONZE,
+                                MOPTextures.PRIMITIVE_INGOT_OVERLAY_BRONZE))
+                .widget(new SlotWidget(exportItems, 2, 140, 29, true, false)
+                        .setBackgroundTexture(MOPTextures.PRIMITIVE_SLOT_BRONZE,
+                                MOPTextures.PRIMITIVE_INGOT_OVERLAY_BRONZE))
+                .widget(new SlotWidget(exportItems, 3, 104, 47, true, false)
                         .setBackgroundTexture(MOPTextures.PRIMITIVE_SLOT_BRONZE,
                                 MOPTextures.PRIMITIVE_DUST_OVERLAY_BRONZE))
-                .widget(new SlotWidget(exportItems, 1, 122, 38, true, false)
+                .widget(new SlotWidget(exportItems, 4, 122, 47, true, false)
                         .setBackgroundTexture(MOPTextures.PRIMITIVE_SLOT_BRONZE,
                                 MOPTextures.PRIMITIVE_DUST_OVERLAY_BRONZE))
-                .widget(new SlotWidget(exportItems, 2, 140, 38, true, false)
+                .widget(new SlotWidget(exportItems, 5, 140, 47, true, false)
                         .setBackgroundTexture(MOPTextures.PRIMITIVE_SLOT_BRONZE,
                                 MOPTextures.PRIMITIVE_DUST_OVERLAY_BRONZE))
                 .bindPlayerInventory(entityPlayer.inventory, MOPTextures.PRIMITIVE_SLOT_BRONZE, 0);
