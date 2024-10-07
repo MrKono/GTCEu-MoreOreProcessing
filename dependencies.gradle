@@ -42,9 +42,15 @@ dependencies {
     api("codechicken:codechickenlib:3.2.3.358") // CCL 3.2.3.358
     api("com.cleanroommc:groovyscript:0.7.3") { transitive = false } // GrS 0.7.3
     api("CraftTweaker2:CraftTweaker2-MC1120-Main:1.12-4.1.20.684") // CrT 4.1.20.684
+    api rfg.deobf("curse.maven:ctm-267602:2915363") // CTM 1.0.2.31
 
     // Hard Dependencies
     devOnlyNonPublishable(rfg.deobf("curse.maven:gregtech-ce-unofficial-557242:5121638")) // CEu 2.8.7
     //devOnlyNonPublishable(rfg.deobf("curse.maven:gregicality-multiblocks-564858:5121714")) // GCYM 1.2.8
+
+
+    compileOnly rfg.deobf("curse.maven:endercore-231868:4671384") // EnderCore 0.5.78
+    compileOnly rfg.deobf("curse.maven:chisel-235279:2915375") // Chisel 1.0.2.45
+    //runtimeOnlyNonPublishable (files("libs/EnderCore-1.12.2-0.5.78-core.jar"))
 
 }

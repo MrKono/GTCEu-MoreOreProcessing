@@ -1,6 +1,5 @@
 package kono.ceu.mop.common.blocks;
 
-import kono.ceu.mop.common.blocks.Casing.MOPBlockPrimitiveCasing;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -10,6 +9,8 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import gregtech.common.blocks.MetaBlocks;
+
+import kono.ceu.mop.common.blocks.Casing.MOPBlockPrimitiveCasing;
 
 public class MOPMetaBlocks {
 

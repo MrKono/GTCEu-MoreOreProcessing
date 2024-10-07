@@ -1,0 +1,12 @@
+{
+  "package": "kono.ceu.mop.mixin",
+  "refmap": "mixins.mop.refmap.json",
+  "target": "@env(DEFAULT)",
+  "minVersion": "0.8",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "MixinMetaPrefixItem"
+  ],
+  "client": [],
+  "server": []
+}

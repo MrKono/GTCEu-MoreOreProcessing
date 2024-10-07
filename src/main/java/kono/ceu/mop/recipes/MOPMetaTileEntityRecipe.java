@@ -1,11 +1,11 @@
 package kono.ceu.mop.recipes;
 
-import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.recipes.ModHandler;
 import gregtech.api.unification.material.Materials;
 import gregtech.api.unification.ore.OrePrefix;
 import gregtech.api.unification.stack.UnificationEntry;
 import gregtech.common.metatileentities.MetaTileEntities;
+
 import kono.ceu.mop.common.metatileentities.MOPMetaTileEntities;
 
 public class MOPMetaTileEntityRecipe {

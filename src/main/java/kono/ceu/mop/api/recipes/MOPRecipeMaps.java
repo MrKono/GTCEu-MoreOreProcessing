@@ -1,5 +1,7 @@
 package kono.ceu.mop.api.recipes;
 
+import static gregtech.api.recipes.RecipeMaps.PRIMITIVE_BLAST_FURNACE_RECIPES;
+
 import gregtech.api.recipes.RecipeMap;
 import gregtech.api.recipes.builders.PrimitiveRecipeBuilder;
 import gregtech.core.sound.GTSoundEvents;
@@ -7,8 +9,6 @@ import gregtech.core.sound.GTSoundEvents;
 import crafttweaker.annotations.ZenRegister;
 import stanhebben.zenscript.annotations.ZenClass;
 import stanhebben.zenscript.annotations.ZenProperty;
-
-import static gregtech.api.recipes.RecipeMaps.PRIMITIVE_BLAST_FURNACE_RECIPES;
 
 @ZenClass("mods.mop.recipe.MOPRecipeMaps")
 @ZenRegister
