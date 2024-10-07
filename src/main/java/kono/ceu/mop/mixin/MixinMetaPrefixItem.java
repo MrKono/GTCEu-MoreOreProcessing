@@ -39,9 +39,9 @@ import kono.ceu.mop.MOPConfig;
 @Mixin(value = MetaPrefixItem.class, remap = false)
 public abstract class MixinMetaPrefixItem {
 
-    private boolean easyCooling = MOPConfig.difficulty.easyCooling;
-    private boolean easyCleaning = MOPConfig.difficulty.easyCooling;
-    private boolean hardCleaning = MOPConfig.difficulty.hardCleaning;
+    private final boolean easyCooling = MOPConfig.difficulty.easyCooling;
+    private final boolean easyCleaning = MOPConfig.difficulty.easyCleaning;
+    private final boolean hardCleaning = MOPConfig.difficulty.hardCleaning;
 
     private final MaterialRegistry registry;
     private final OrePrefix prefix;
