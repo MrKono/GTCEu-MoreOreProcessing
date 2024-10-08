@@ -1,12 +1,15 @@
 [{
     "modid": "${modid}",
     "name": "${modname}",
-    "description": "Adding more ore processing to GTCEu",
+    "description": "Additions and tweaks of some of GTCEu's ore processing",
     "version": "${version}",
     "mcversion": "${mcversion}",
     "logoFile": "resources/assets/mop/textures/logo/logo.png",
     "url": "",
     "authorList": [],
     "credits": "",
-    "dependencies": []
+    "dependencies": [
+        "mixinbooter",
+        "gregtech"
+    ]
 }]
