@@ -6,7 +6,7 @@
     "mcversion": "${mcversion}",
     "logoFile": "resources/assets/mop/textures/logo/logo.png",
     "url": "",
-    "authorList": [],
+    "authorList": ["MrKono"],
     "credits": "",
     "dependencies": [
         "mixinbooter",
