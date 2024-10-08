@@ -28,6 +28,7 @@ import kono.ceu.mop.common.metatileentities.MOPMetaTileEntities;
 import kono.ceu.mop.recipes.MOPBlockRecipe;
 import kono.ceu.mop.recipes.MOPMetaTileEntityRecipe;
 import kono.ceu.mop.recipes.PBFRecipe;
+import kono.ceu.mop.recipes.handler.MOPRecipeHandlerList;
 
 @Mod.EventBusSubscriber(modid = MOPValues.MODID)
 public class CommonProxy {
@@ -78,6 +79,7 @@ public class CommonProxy {
         PBFRecipe.init();
         MOPMetaTileEntityRecipe.init();
         MOPBlockRecipe.init();
+        MOPRecipeHandlerList.init();
     }
 
     @SubscribeEvent(priority = EventPriority.LOW)
