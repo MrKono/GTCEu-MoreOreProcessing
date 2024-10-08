@@ -5,7 +5,7 @@
     "version": "${version}",
     "mcversion": "${mcversion}",
     "logoFile": "resources/assets/mop/textures/logo/logo.png",
-    "url": "",
+    "url": "https://www.curseforge.com/minecraft/mc-mods/gtmoreoreprocessing",
     "authorList": ["MrKono"],
     "credits": "",
     "dependencies": [
