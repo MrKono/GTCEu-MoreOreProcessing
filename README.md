@@ -1,6 +1,7 @@
 <p align="center"><img src="https://github.com/MrKono/GTCEu-MoreOreProcessing/blob/master/src/main/resources/assets/mop/textures/logo/logo.png" alt="Logo" width="128" height="128"></p>
 <h1 align="center">GTMoreOreProcessing</h1>
-## Info
+
+## Info 
 **This mod Requires [GregTech CE: Unofficial](https://github.com/GregTechCEu/GregTech) !**<br>
 This mod adds and tweaks of some of GTCEu's ore processing.
 
