@@ -200,6 +200,5 @@ public class MetaTileEntityBronzeReinforcedBlastFurnace extends RecipeMapPrimiti
     public void addInformation(ItemStack stack, @Nullable World world, @NotNull List<String> tooltip,
                                boolean advanced) {
         super.addInformation(stack, world, tooltip, advanced);
-        // tooltip.add(I18n.format("mop.machine.bronze_reinforced_blast_furnace.tooltip"));
     }
 }
