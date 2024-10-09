@@ -8,12 +8,12 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 import gregtech.GTInternalTags;
 
 import kono.ceu.mop.api.MOPValues;
 import kono.ceu.mop.common.CommonProxy;
-import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 @Mod(modid = MOPValues.MODID,
      name = MOPValues.MODNAME,
