@@ -25,9 +25,7 @@ import kono.ceu.mop.api.MOPValues;
 import kono.ceu.mop.api.recipes.MOPRecipeMaps;
 import kono.ceu.mop.common.blocks.MOPMetaBlocks;
 import kono.ceu.mop.common.metatileentities.MOPMetaTileEntities;
-import kono.ceu.mop.recipes.MOPBlockRecipe;
-import kono.ceu.mop.recipes.MOPMetaTileEntityRecipe;
-import kono.ceu.mop.recipes.PBFRecipe;
+import kono.ceu.mop.recipes.*;
 import kono.ceu.mop.recipes.handler.MOPRecipeHandlerList;
 
 @Mod.EventBusSubscriber(modid = MOPValues.MODID)

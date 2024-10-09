@@ -10,7 +10,6 @@ import gregtech.api.unification.material.Materials;
 import gregtech.api.unification.stack.UnificationEntry;
 import gregtech.common.ConfigHolder;
 import gregtech.common.blocks.MetaBlocks;
-import gregtech.common.items.MetaItems;
 
 import kono.ceu.mop.common.blocks.MOPMetaBlocks;
 
@@ -21,8 +20,8 @@ public class MOPBlockRecipe {
         if (ConfigHolder.recipes.harderBrickRecipes) {
             ModHandler.addShapedRecipe("bronze_plated_firebricks",
                     MOPMetaBlocks.MOP_BLOCK_PRIMITIVE_CASING.getItemVariant(BRONZE_PLATED_FIREBRICKS),
-                    "BPB", "BbB", "PBP",
-                    'B', MetaItems.FIRECLAY_BRICK.getStackForm(),
+                    "PbP", "PBP", "PbP",
+                    'B', MetaBlocks.METAL_CASING.getItemVariant(PRIMITIVE_BRICKS),
                     'P', new UnificationEntry(plateDouble, Materials.Bronze),
                     'b', new UnificationEntry(block, Materials.Bronze));
         } else {
