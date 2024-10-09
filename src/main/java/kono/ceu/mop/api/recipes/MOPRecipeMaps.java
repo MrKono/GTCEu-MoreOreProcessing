@@ -13,7 +13,7 @@ import stanhebben.zenscript.annotations.ZenProperty;
 public class MOPRecipeMaps {
 
     @ZenProperty
-    public static final RecipeMap<PrimitiveRecipeBuilder> BRONZE_PLATED_BLAST_FURNACE_RECIPES = new RecipeMap<>(
-            "bronze_plated_blast_furnace", 3, 6, 0, 0, new PrimitiveRecipeBuilder(), false)
+    public static final RecipeMap<PrimitiveRecipeBuilder> BRONZE_REINFORCED_BLAST_FURNACE_RECIPES = new RecipeMap<>(
+            "bronze_reinforced_blast_furnace", 3, 6, 0, 0, new PrimitiveRecipeBuilder(), false)
                     .setSound(GTSoundEvents.FIRE);
 }

@@ -64,7 +64,7 @@ public class CommonProxy {
     @SubscribeEvent(priority = EventPriority.HIGH)
     public static void registerRecipesHigh(RegistryEvent.Register<IRecipe> event) {
         RecipeMaps.PRIMITIVE_BLAST_FURNACE_RECIPES.onRecipeBuild(builder -> {
-            MOPRecipeMaps.BRONZE_PLATED_BLAST_FURNACE_RECIPES.recipeBuilder()
+            MOPRecipeMaps.BRONZE_REINFORCED_BLAST_FURNACE_RECIPES.recipeBuilder()
                     .inputs(builder.getInputs().toArray(new GTRecipeInput[0]))
                     .outputs(builder.getOutputs())
                     .duration((int) (builder.getDuration() * 0.75))
