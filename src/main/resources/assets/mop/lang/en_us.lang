@@ -1,3 +1,11 @@
+# Tooltips
+# Bronze Plated Blast Furnace
+mop.machine.bronze_plated_blast_furnace.tooltip.1=Nostalgic Machines
+mop.machine.bronze_plated_blast_furnace.tooltip.2=Just different materials for PBF
+
+# Bronze Reinforced Blast Furnace
+mop.machine.bronze_reinforced_blast_furnace.tooltip=25%% more efficient than PBF
+
 # Blocks
 # Primitive Casing
 tile.primitive_casing.bronze_plated_firebricks.name=Bronze Plated Firebricks
@@ -8,4 +16,4 @@ mop.machine.bronze_plated_blast_furnace.name=Bronze Plated Blast Furnace
 mop.machine.bronze_reinforced_blast_furnace.name=Bronze Reinforced Blast Furnace
 
 # Recipe Maps
-recipemap.bronze_plated_blast_furnace.name=Bronze Plated Blast Furnace
+recipemap.bronze_reinforced_blast_furnace.name=Bronze Reinforced Blast Furnace

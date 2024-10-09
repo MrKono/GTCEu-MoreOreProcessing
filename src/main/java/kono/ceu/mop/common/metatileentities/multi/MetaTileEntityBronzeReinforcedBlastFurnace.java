@@ -1,17 +1,22 @@
 package kono.ceu.mop.common.metatileentities.multi;
 
+import java.util.List;
+
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import org.apache.commons.lang3.ArrayUtils;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import gregtech.api.GTValues;
 import gregtech.api.gui.ModularUI;
@@ -53,7 +58,7 @@ public class MetaTileEntityBronzeReinforcedBlastFurnace extends RecipeMapPrimiti
             bws -> GTUtility.isBlockSnow(bws.getBlockState()));
 
     public MetaTileEntityBronzeReinforcedBlastFurnace(ResourceLocation metaTileEntityId) {
-        super(metaTileEntityId, MOPRecipeMaps.BRONZE_PLATED_BLAST_FURNACE_RECIPES);
+        super(metaTileEntityId, MOPRecipeMaps.BRONZE_REINFORCED_BLAST_FURNACE_RECIPES);
     }
 
     @Override
@@ -100,7 +105,7 @@ public class MetaTileEntityBronzeReinforcedBlastFurnace extends RecipeMapPrimiti
                                 MOPTextures.PRIMITIVE_FURNACE_OVERLAY_BRONZE))
                 .widget(new RecipeProgressWidget(recipeMapWorkable::getProgressPercent, 77, 39, 20, 15,
                         MOPTextures.BRONZE_PRIMITIVE_BLAST_FURNACE_PROGRESS_BAR, ProgressWidget.MoveType.HORIZONTAL,
-                        MOPRecipeMaps.BRONZE_PLATED_BLAST_FURNACE_RECIPES))
+                        MOPRecipeMaps.BRONZE_REINFORCED_BLAST_FURNACE_RECIPES))
                 .widget(new SlotWidget(exportItems, 0, 104, 29, true, false)
                         .setBackgroundTexture(MOPTextures.PRIMITIVE_SLOT_BRONZE,
                                 MOPTextures.PRIMITIVE_INGOT_OVERLAY_BRONZE))
@@ -189,5 +194,12 @@ public class MetaTileEntityBronzeReinforcedBlastFurnace extends RecipeMapPrimiti
                         SoundEvents.BLOCK_FURNACE_FIRE_CRACKLE, SoundCategory.BLOCKS, 1.0F, 1.0F, false);
             }
         }
+    }
+
+    @Override
+    public void addInformation(ItemStack stack, @Nullable World world, @NotNull List<String> tooltip,
+                               boolean advanced) {
+        super.addInformation(stack, world, tooltip, advanced);
+        // tooltip.add(I18n.format("mop.machine.bronze_reinforced_blast_furnace.tooltip"));
     }
 }
