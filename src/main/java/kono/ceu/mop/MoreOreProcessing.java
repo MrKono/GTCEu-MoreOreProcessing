@@ -1,5 +1,8 @@
 package kono.ceu.mop;
 
+import net.minecraftforge.common.config.Config;
+import net.minecraftforge.common.config.ConfigManager;
+import net.minecraftforge.fml.client.event.ConfigChangedEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -10,6 +13,7 @@ import gregtech.GTInternalTags;
 
 import kono.ceu.mop.api.MOPValues;
 import kono.ceu.mop.common.CommonProxy;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 @Mod(modid = MOPValues.MODID,
      name = MOPValues.MODNAME,
@@ -40,5 +44,12 @@ public class MoreOreProcessing {
     @Mod.EventHandler
     public void postInit(FMLPostInitializationEvent e) {
         proxy.postInit(e);
+    }
+
+    @SubscribeEvent
+    public static void syncConfigValues(ConfigChangedEvent.OnConfigChangedEvent event) {
+        if (event.getModID().equals(Tags.MODID)) {
+            ConfigManager.sync(Tags.MODID, Config.Type.INSTANCE);
+        }
     }
 }
