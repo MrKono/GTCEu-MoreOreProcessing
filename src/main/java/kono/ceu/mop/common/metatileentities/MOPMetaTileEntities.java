@@ -4,8 +4,8 @@ import static gregtech.common.metatileentities.MetaTileEntities.registerMetaTile
 import static kono.ceu.mop.api.MOPValues.mopId;
 
 import kono.ceu.mop.MOPConfig;
-import kono.ceu.mop.common.metatileentities.multi.MetaTileEntityBronzePlatedBlastFurnace;
-import kono.ceu.mop.common.metatileentities.multi.MetaTileEntityBronzeReinforcedBlastFurnace;
+import kono.ceu.mop.common.metatileentities.multi.primitive.MetaTileEntityBronzePlatedBlastFurnace;
+import kono.ceu.mop.common.metatileentities.multi.primitive.MetaTileEntityBronzeReinforcedBlastFurnace;
 
 public class MOPMetaTileEntities {
 

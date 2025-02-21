@@ -1,4 +1,4 @@
-package kono.ceu.mop.common.metatileentities.multi;
+package kono.ceu.mop.common.metatileentities.multi.primitive;
 
 import static gregtech.common.blocks.BlockMetalCasing.MetalCasingType.BRONZE_BRICKS;
 import static gregtech.common.blocks.MetaBlocks.METAL_CASING;

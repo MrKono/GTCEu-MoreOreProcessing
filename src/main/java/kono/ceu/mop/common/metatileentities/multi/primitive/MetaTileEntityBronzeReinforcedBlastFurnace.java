@@ -1,4 +1,4 @@
-package kono.ceu.mop.common.metatileentities.multi;
+package kono.ceu.mop.common.metatileentities.multi.primitive;
 
 import java.util.List;
 
