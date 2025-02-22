@@ -4,5 +4,6 @@ public class MOPRecipeHandlerList {
 
     public static void init() {
         MOPAlloyRecipe.init();
+        MOPOreFactoryHandler.init();
     }
 }
