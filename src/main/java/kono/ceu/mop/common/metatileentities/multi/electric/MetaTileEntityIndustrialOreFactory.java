@@ -1,7 +1,16 @@
 package kono.ceu.mop.common.metatileentities.multi.electric;
 
-import gregicality.multiblocks.api.metatileentity.GCYMMultiblockAbility;
-import gregicality.multiblocks.api.metatileentity.GCYMRecipeMapMultiblockController;
+import java.util.List;
+
+import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.resources.I18n;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.World;
+
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
 import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.metatileentity.interfaces.IGregTechTileEntity;
 import gregtech.api.metatileentity.multiblock.IMultiblockAbilityPart;
@@ -10,26 +19,19 @@ import gregtech.api.metatileentity.multiblock.MultiblockAbility;
 import gregtech.api.pattern.BlockPattern;
 import gregtech.api.pattern.FactoryBlockPattern;
 import gregtech.client.renderer.ICubeRenderer;
-import gregtech.client.renderer.texture.Textures;
 import gregtech.client.utils.TooltipHelper;
 import gregtech.common.blocks.BlockGlassCasing;
-import gregtech.common.blocks.BlockMetalCasing;
 import gregtech.common.blocks.MetaBlocks;
+
+import gregicality.multiblocks.api.metatileentity.GCYMMultiblockAbility;
+import gregicality.multiblocks.api.metatileentity.GCYMRecipeMapMultiblockController;
+
 import kono.ceu.mop.api.recipes.MOPRecipeMaps;
 import kono.ceu.mop.client.MOPTextures;
 import kono.ceu.mop.common.blocks.Casing.MOPGearBoxCasing;
 import kono.ceu.mop.common.blocks.Casing.MOPMetalCasing;
 import kono.ceu.mop.common.blocks.Casing.MOPPipeCasing;
 import kono.ceu.mop.common.blocks.MOPMetaBlocks;
-import net.minecraft.block.state.IBlockState;
-import net.minecraft.client.resources.I18n;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.world.World;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
-
-import java.util.List;
 
 public class MetaTileEntityIndustrialOreFactory extends GCYMRecipeMapMultiblockController {
 
@@ -82,7 +84,9 @@ public class MetaTileEntityIndustrialOreFactory extends GCYMRecipeMapMultiblockC
                 .where('M', abilities(MultiblockAbility.MUFFLER_HATCH))
                 .where('P', states(MOPMetaBlocks.MOP_PIPE_CASING.getState(MOPPipeCasing.CasingType.AMERICIUM)))
                 .where('S', selfPredicate())
-                .where('V', tieredCasing().or(states(MOPMetaBlocks.MOP_GEAR_BOX_CASING.getState(MOPGearBoxCasing.CasingType.AMERICIUM))))
+                .where('V',
+                        tieredCasing().or(states(
+                                MOPMetaBlocks.MOP_GEAR_BOX_CASING.getState(MOPGearBoxCasing.CasingType.AMERICIUM))))
                 .where('#', any())
                 .where('$', air())
                 .build();
