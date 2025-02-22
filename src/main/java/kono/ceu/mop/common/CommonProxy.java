@@ -43,6 +43,9 @@ public class CommonProxy {
     public static void registerBlocks(RegistryEvent.Register<Block> event) {
         IForgeRegistry<Block> registry = event.getRegistry();
         registry.register(MOPMetaBlocks.MOP_BLOCK_PRIMITIVE_CASING);
+        registry.register(MOPMetaBlocks.MOP_METAL_CASING);
+        registry.register(MOPMetaBlocks.MOP_PIPE_CASING);
+        registry.register(MOPMetaBlocks.MOP_GEAR_BOX_CASING);
     }
 
     @SubscribeEvent
@@ -50,6 +53,9 @@ public class CommonProxy {
         IForgeRegistry<Item> registry = event.getRegistry();
 
         registry.register(createItemBlock(MOPMetaBlocks.MOP_BLOCK_PRIMITIVE_CASING, VariantItemBlock::new));
+        registry.register(createItemBlock(MOPMetaBlocks.MOP_METAL_CASING, VariantItemBlock::new));
+        registry.register(createItemBlock(MOPMetaBlocks.MOP_PIPE_CASING, VariantItemBlock::new));
+        registry.register(createItemBlock(MOPMetaBlocks.MOP_GEAR_BOX_CASING, VariantItemBlock::new));
     }
 
     private static <T extends Block> ItemBlock createItemBlock(T block, Function<T, ItemBlock> producer) {
