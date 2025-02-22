@@ -1,6 +1,9 @@
 # ChangeLog
 * * *
+# 1.0.3
+- Add Ore Processing Factory
 
+* * *
 # 1.0.2
 - Fixed in-game changes to cfg not being reflected.
 - Fixed Bronze Plated Blast Furnace Recipe

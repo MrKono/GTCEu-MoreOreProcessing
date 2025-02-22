@@ -11,16 +11,25 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import gregtech.common.blocks.MetaBlocks;
 
 import kono.ceu.mop.common.blocks.Casing.MOPBlockPrimitiveCasing;
+import kono.ceu.mop.common.blocks.Casing.MOPGearBoxCasing;
+import kono.ceu.mop.common.blocks.Casing.MOPMetalCasing;
+import kono.ceu.mop.common.blocks.Casing.MOPPipeCasing;
 
 public class MOPMetaBlocks {
 
     private MOPMetaBlocks() {}
 
     public static final MOPBlockPrimitiveCasing MOP_BLOCK_PRIMITIVE_CASING = new MOPBlockPrimitiveCasing();
+    public static final MOPMetalCasing MOP_METAL_CASING = new MOPMetalCasing();
+    public static final MOPPipeCasing MOP_PIPE_CASING = new MOPPipeCasing();
+    public static final MOPGearBoxCasing MOP_GEAR_BOX_CASING = new MOPGearBoxCasing();
 
     @SideOnly(Side.CLIENT)
     public static void registerItemModels() {
         registerItemModel(MOP_BLOCK_PRIMITIVE_CASING);
+        registerItemModel(MOP_METAL_CASING);
+        registerItemModel(MOP_PIPE_CASING);
+        registerItemModel(MOP_GEAR_BOX_CASING);
     }
 
     @SideOnly(Side.CLIENT)

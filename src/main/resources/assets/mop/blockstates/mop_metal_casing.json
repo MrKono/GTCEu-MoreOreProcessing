@@ -1,0 +1,25 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "minecraft:cube_all",
+    "textures": {
+      "all": "gregtech:blocks/rendering_error"
+    }
+  },
+  "variants": {
+    "variant": {
+      "iridium_plated": {
+      "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gregtech:blocks/metal/iridium_plated"
+        }
+      },
+      "americium_plated": {
+      "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gregtech:blocks/metal/americium_plated"
+        }
+      }
+    }
+  }
+}

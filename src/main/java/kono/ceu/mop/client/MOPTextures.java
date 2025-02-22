@@ -27,10 +27,22 @@ public class MOPTextures {
 
     // Blocks
     public static SimpleOverlayRenderer BRONZE_FIREBRICKS;
+    public static SimpleOverlayRenderer IRIDIUM_PLATED;
+    public static SimpleOverlayRenderer AMERICIUM_PLATED;
+    public static SimpleOverlayRenderer IRIDIUM_PIPE;
+    public static SimpleOverlayRenderer AMERICIUM_PIPE;
+    public static SimpleOverlayRenderer IRIDIUM_GEARBOX;
+    public static SimpleOverlayRenderer AMERICIUM_GEARBOX;
 
     private MOPTextures() {}
 
     public static void preInit() {
         BRONZE_FIREBRICKS = new SimpleOverlayRenderer("primitive/bronze_plated_firebricks");
+        IRIDIUM_PLATED = new SimpleOverlayRenderer("metal/iridium_plated");
+        AMERICIUM_PLATED = new SimpleOverlayRenderer("metal/americium_plated");
+        IRIDIUM_PIPE = new SimpleOverlayRenderer("pipe/pipe_iridium");
+        AMERICIUM_PIPE = new SimpleOverlayRenderer("pipe/pipe_americium");
+        IRIDIUM_GEARBOX = new SimpleOverlayRenderer("gearbox/gearbox_iridium");
+        AMERICIUM_GEARBOX = new SimpleOverlayRenderer("gearbox/gearbox_americium");
     }
 }

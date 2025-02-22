@@ -6,14 +6,41 @@ mop.machine.bronze_plated_blast_furnace.tooltip.2=Just different materials for P
 # Bronze Reinforced Blast Furnace
 mop.machine.bronze_reinforced_blast_furnace.tooltip=25%% more efficient than PBF
 
+# Ore Factory
+mop.machine.ore_factory.tooltip1=All ore-processing in a single step
+mop.machine.ore_factory.tooltip2=Processing varies depending on §eProgrammed Circuit§7
+mop.machine.ore_factory.tooltip.hold_ctrl=Hold CTRL to show processing details
+mop.machine.ore_factory.tooltip.process1=§e1.§7 Macerate -> Ore Washer -> Macerate -> Centrifuge
+mop.machine.ore_factory.tooltip.process2=§e2.§7 Macerate -> Ore Washer -> Thermal Centrifuge -> Macerate
+mop.machine.ore_factory.tooltip.process3=§e3.§7 Macerate -> Ore Washer -> Sifter -> Centrifuge
+mop.machine.ore_factory.tooltip.process4=§e4.§7 Macerate -> Macerate -> Centrifuge
+mop.machine.ore_factory.tooltip.process5=§e5.§7 Macerate -> Thermal Centrifuge -> Macerate
+mop.machine.ore_factory.tooltip.process6=§e6.§7 Macerate -> Chemical Bathing -> Macerate -> Centrifuge
+mop.machine.ore_factory.tooltip.process7=§e7.§7 Macerate -> Chemical Bathing -> Thermal Centrifuge -> Macerate
+mop.machine.ore_factory.tooltip.process8=§e8.§7 Macerate -> Ore Washer -> Sifter -> Centrifuge / Macerate (All Gems)
+mop.machine.ore_factory.tooltip.process9=§e9.§7 Macerate -> Ore Washer -> Sifter -> Centrifuge / Macerate (Flawed and Chipped)
+
+
 # Blocks
 # Primitive Casing
 tile.primitive_casing.bronze_plated_firebricks.name=Bronze Plated Firebricks
+# Metal Casing
+tile.metal_casing.iridium_plated.name=Iridium Plated Factory Casing
+tile.metal_casing.americium_plated.name=Americium Plated Factory Casing
+# Pipe Casing
+tile.pipe_casing.iridium_pipe.name=Iridium Pipe Casing
+tile.pipe_casing.americium_pipe.name=Americium Pipe Casing
+# Gear Box Casing
+tile.gearbox_casing.iridium_gearbox.name=Iridium Gear Box Casing
+tile.gearbox_casing.americium_gearbox.name=Americium Gear Box Casing
 
 # Machines
 # multi
 mop.machine.bronze_plated_blast_furnace.name=Bronze Plated Blast Furnace
 mop.machine.bronze_reinforced_blast_furnace.name=Bronze Reinforced Blast Furnace
+mop.machine.ore_factory.name=Ore Processing Factory
+mop.machine.industrial_ore_factory.name=Industrial Ore Processing Factory
 
 # Recipe Maps
 recipemap.bronze_reinforced_blast_furnace.name=Bronze Reinforced Blast Furnace
+recipemap.ore_factory.name=Ore Processing Factory
