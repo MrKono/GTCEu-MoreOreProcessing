@@ -6,14 +6,40 @@ mop.machine.bronze_plated_blast_furnace.tooltip.2=素材違いのPBF
 # Bronze Reinforced Blast Furnace
 mop.machine.bronze_reinforced_blast_furnace.tooltip=PBFより25%%効率的
 
+# Ore Factory
+mop.machine.ore_factory.tooltip1=全ての鉱石処理をワンステップで
+mop.machine.ore_factory.tooltip2=§eプログラム回路§7によって処理方法が変わる
+mop.machine.ore_factory.tooltip.hold_ctrl=CTRLで処理方法を表示
+mop.machine.ore_factory.tooltip.process1=§e1.§7 粉砕 -> 洗浄 -> 粉砕 -> 熱遠心
+mop.machine.ore_factory.tooltip.process2=§e2.§7 粉砕 -> 洗浄 -> 熱遠心 -> 粉砕
+mop.machine.ore_factory.tooltip.process3=§e3.§7 粉砕 -> 洗浄 -> 選別 -> 熱遠心
+mop.machine.ore_factory.tooltip.process4=§e4.§7 粉砕 -> 粉砕 -> 熱遠心
+mop.machine.ore_factory.tooltip.process5=§e5.§7 粉砕 -> 熱遠心 -> 粉砕
+mop.machine.ore_factory.tooltip.process6=§e6.§7 粉砕 -> 化学槽 -> 粉砕 -> 熱遠心
+mop.machine.ore_factory.tooltip.process7=§e7.§7 粉砕 -> 化学槽 -> 熱遠心 -> 粉砕
+mop.machine.ore_factory.tooltip.process8=§e8.§7 粉砕 -> 洗浄 -> 選別 -> 熱遠心 / 粉砕 (全て)
+mop.machine.ore_factory.tooltip.process9=§e9.§7 粉砕 -> 洗浄 -> 選別 -> 熱遠心 / 粉砕 (欠けたものと傷のあるもの)
+
 # Blocks
 # Primitive Casing
 tile.primitive_casing.bronze_plated_firebricks.name=ブロンズ装甲耐火レンガ
+# Metal Casing
+tile.metal_casing.iridium_plated.name=イリジウムメッキファクトリー外装
+tile.metal_casing.americium_plated.name=アメリシウムメッキファクトリー外装
+# Pipe Casing
+tile.pipe_casing.iridium_pipe.name=イリジウム製パイプ外装
+tile.pipe_casing.americium_pipe.name=アメリシウム製パイプ外装
+# Gear Box Casing
+tile.gearbox_casing.iridium_gearbox.name=イリジウム製ギアボックス外装
+tile.gearbox_casing.americium_gearbox.name=アメリシウム製ギアボックス外装
 
 # Machines
 # multi
 mop.machine.bronze_plated_blast_furnace.name=ブロンズ装甲高炉
 mop.machine.bronze_reinforced_blast_furnace.name=ブロンズ強化高炉
+mop.machine.ore_factory.name=鉱石処理ファクトリー
+mop.machine.industrial_ore_factory.name=工業用鉱石処理ファクトリー
 
 # Recipe Maps
 recipemap.bronze_reinforced_blast_furnace.name=ブロンズ強化高炉
+recipemap.ore_factory.name=鉱石処理ファクトリー
