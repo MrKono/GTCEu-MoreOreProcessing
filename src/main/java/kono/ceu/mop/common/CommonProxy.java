@@ -3,7 +3,6 @@ package kono.ceu.mop.common;
 import java.util.Objects;
 import java.util.function.Function;
 
-import kono.ceu.mop.recipes.handler.MOPMaterialInfoLoader;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
@@ -27,6 +26,7 @@ import kono.ceu.mop.api.recipes.MOPRecipeMaps;
 import kono.ceu.mop.common.blocks.MOPMetaBlocks;
 import kono.ceu.mop.common.metatileentities.MOPMetaTileEntities;
 import kono.ceu.mop.recipes.*;
+import kono.ceu.mop.recipes.handler.MOPMaterialInfoLoader;
 import kono.ceu.mop.recipes.handler.MOPRecipeHandlerList;
 
 @Mod.EventBusSubscriber(modid = MOPValues.MODID)
