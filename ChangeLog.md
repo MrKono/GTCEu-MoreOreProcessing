@@ -1,4 +1,10 @@
 # ChangeLog
+* * *  
+# 1.0.4  
+- Add Recycling recipe for Casings  
+- Fix Thermal Centrifuging byproduct  
+- Add Electromagnetic Separating Process for Ore Processing Factory  
+
 * * *
 # 1.0.3
 - Add Ore Processing Factory

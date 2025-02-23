@@ -19,6 +19,8 @@ mop.machine.ore_factory.tooltip.process6=§e6.§7 粉砕 -> 化学槽 -> 粉砕 
 mop.machine.ore_factory.tooltip.process7=§e7.§7 粉砕 -> 化学槽 -> 熱遠心 -> 粉砕
 mop.machine.ore_factory.tooltip.process8=§e8.§7 粉砕 -> 洗浄 -> 選別 -> 熱遠心 / 粉砕 (全て)
 mop.machine.ore_factory.tooltip.process9=§e9.§7 粉砕 -> 洗浄 -> 選別 -> 熱遠心 / 粉砕 (欠けたものと傷のあるもの)
+mop.machine.ore_factory.tooltip.process10=§e10.§7 粉砕 -> 洗浄 -> 粉砕 -> 電磁分離
+mop.machine.ore_factory.tooltip.process11=§e11.§7 粉砕 -> 化学槽 -> 粉砕 -> 電磁分離
 
 # Blocks
 # Primitive Casing

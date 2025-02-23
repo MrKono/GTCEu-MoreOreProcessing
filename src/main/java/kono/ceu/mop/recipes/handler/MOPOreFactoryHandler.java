@@ -2,6 +2,8 @@ package kono.ceu.mop.recipes.handler;
 
 import static gregtech.api.unification.material.info.MaterialFlags.HIGH_SIFTER_OUTPUT;
 
+import java.util.List;
+
 import net.minecraft.item.ItemStack;
 
 import org.apache.commons.lang3.tuple.Pair;
@@ -53,7 +55,8 @@ public class MOPOreFactoryHandler {
         registerProcess7(orePrefix, material, property);
         registerProcess8(orePrefix, material, property);
         registerProcess9(orePrefix, material, property);
-        // registerProcess10(orePrefix, material, property);
+        registerProcess10(orePrefix, material, property);
+        registerProcess11(orePrefix, material, property);
     }
 
     // Macerate -> Ore Washer -> Macerate -> Centrifuge
@@ -121,7 +124,8 @@ public class MOPOreFactoryHandler {
     }
 
     // Macerate -> Ore Washer -> Sifter -> Centrifuge
-    public static void registerProcess3(OrePrefix orePrefix, @NotNull Material material, OreProperty property) {
+    public static void registerProcess3(OrePrefix orePrefix, @NotNull Material material,
+                                        @NotNull OreProperty property) {
         int amount = 2 * outputAmount(orePrefix, property);
         if (!material.hasProperty(PropertyKey.GEM)) return;
         ItemStack exquisiteStack = OreDictUnifier.get(OrePrefix.gemExquisite, material);
@@ -304,7 +308,8 @@ public class MOPOreFactoryHandler {
     }
 
     // Macerate -> Ore Washer -> Sifter -> Centrifuge / Macerate (All Gems)
-    public static void registerProcess8(OrePrefix orePrefix, @NotNull Material material, OreProperty property) {
+    public static void registerProcess8(OrePrefix orePrefix, @NotNull Material material,
+                                        @NotNull OreProperty property) {
         int amount = 2 * outputAmount(orePrefix, property);
         if (!material.hasProperty(PropertyKey.GEM)) return;
         ItemStack exquisiteStack = OreDictUnifier.get(OrePrefix.dust, material);
@@ -363,7 +368,8 @@ public class MOPOreFactoryHandler {
     }
 
     // Macerate -> Ore Washer -> Sifter -> Centrifuge / Macerate (Flawed and Chipped)
-    public static void registerProcess9(OrePrefix orePrefix, @NotNull Material material, OreProperty property) {
+    public static void registerProcess9(OrePrefix orePrefix, @NotNull Material material,
+                                        @NotNull OreProperty property) {
         int amount = 2 * outputAmount(orePrefix, property);
         if (!material.hasProperty(PropertyKey.GEM)) return;
         ItemStack exquisiteStack = OreDictUnifier.get(OrePrefix.gemExquisite, material);
@@ -421,6 +427,94 @@ public class MOPOreFactoryHandler {
         builder.buildAndRegister();
     }
 
+    // Macerate -> Ore Washer -> Macerate -> Electromagnetic Separating
+    public static void registerProcess10(OrePrefix orePrefix, @NotNull Material material,
+                                         @NotNull OreProperty property) {
+        if (property.getSeparatedInto() == null || property.getSeparatedInto().isEmpty()) return;
+        int amount = 2 * outputAmount(orePrefix, property);
+        List<Material> separatedMaterial = property.getSeparatedInto();
+        ItemStack separateStack = OreDictUnifier.get(OrePrefix.dust, separatedMaterial.get(0));
+        OrePrefix prefix = (separatedMaterial.get(separatedMaterial.size() - 1).getBlastTemperature() == 0 &&
+                separatedMaterial.get(separatedMaterial.size() - 1).hasProperty(PropertyKey.INGOT)) ?
+                        OrePrefix.nugget : OrePrefix.dust;
+        ItemStack separatedStack2 = OreDictUnifier.get(prefix, separatedMaterial.get(separatedMaterial.size() - 1),
+                prefix == OrePrefix.nugget ? 2 : 1);
+        separateStack.setCount(amount);
+        separatedStack2.setCount(amount);
+        ItemStack output = OreDictUnifier.get(OrePrefix.dust, material);
+        if (output.isEmpty()) {
+            // fallback for reduced & cleanGravel
+            output = GTUtility.copyFirst(
+                    OreDictUnifier.get(OrePrefix.reduced, material),
+                    OreDictUnifier.get(OrePrefix.cleanGravel, material));
+        }
+        RecipeBuilder<?> builder = MOPRecipeMaps.ORE_FACTORY_RECIPES.recipeBuilder()
+                .input(orePrefix, material)
+                .outputs(GTUtility.copy(amount, output))
+                .chancedOutput(crushingByproduct(material, property), 1400, 850)
+                .fluidInputs(Materials.Lubricant.getFluid(10))
+                .circuitMeta(10)
+                .duration(25 * 20);
+        for (MaterialStack secondaryMaterial : orePrefix.secondaryMaterials) {
+            if (secondaryMaterial.material.hasProperty(PropertyKey.DUST)) {
+                ItemStack dustStack = OreDictUnifier.getGem(secondaryMaterial);
+                builder.chancedOutput(dustStack, 6700, 800);
+            }
+        }
+        builder.fluidInputs(Materials.DistilledWater.getFluid(100 * amount))
+                .chancedOutput(GTUtility.copy(amount, washingByproduct(material, property)), 3333, 0)
+                .chancedOutput(GTUtility.copy(amount, purifiedCrushingByproduct(material, property)), 1400, 850)
+                .chancedOutput(separateStack, 1000, 250)
+                .chancedOutput(separatedStack2, prefix == OrePrefix.dust ? 500 : 2000,
+                        prefix == OrePrefix.dust ? 150 : 600)
+                .buildAndRegister();
+    }
+
+    // Macerate -> Chemical Bathing -> Macerate -> Electromagnetic Separating
+    public static void registerProcess11(OrePrefix orePrefix, @NotNull Material material,
+                                         @NotNull OreProperty property) {
+        if (property.getWashedIn().getKey() == null) return;
+        Pair<Material, Integer> washedInTuple = property.getWashedIn();
+        if (property.getSeparatedInto() == null || property.getSeparatedInto().isEmpty()) return;
+        int amount = 2 * outputAmount(orePrefix, property);
+        List<Material> separatedMaterial = property.getSeparatedInto();
+        ItemStack separateStack = OreDictUnifier.get(OrePrefix.dust, separatedMaterial.get(0));
+        OrePrefix prefix = (separatedMaterial.get(separatedMaterial.size() - 1).getBlastTemperature() == 0 &&
+                separatedMaterial.get(separatedMaterial.size() - 1).hasProperty(PropertyKey.INGOT)) ?
+                        OrePrefix.nugget : OrePrefix.dust;
+        ItemStack separatedStack2 = OreDictUnifier.get(prefix, separatedMaterial.get(separatedMaterial.size() - 1),
+                prefix == OrePrefix.nugget ? 2 : 1);
+        separateStack.setCount(amount);
+        separatedStack2.setCount(amount);
+        ItemStack output = OreDictUnifier.get(OrePrefix.dust, material);
+        if (output.isEmpty()) {
+            // fallback for reduced & cleanGravel
+            output = GTUtility.copyFirst(
+                    OreDictUnifier.get(OrePrefix.reduced, material),
+                    OreDictUnifier.get(OrePrefix.cleanGravel, material));
+        }
+        RecipeBuilder<?> builder = MOPRecipeMaps.ORE_FACTORY_RECIPES.recipeBuilder()
+                .input(orePrefix, material)
+                .outputs(GTUtility.copy(amount, output))
+                .chancedOutput(crushingByproduct(material, property), 1400, 850)
+                .fluidInputs(Materials.Lubricant.getFluid(10))
+                .circuitMeta(11)
+                .duration(27 * 20);
+        for (MaterialStack secondaryMaterial : orePrefix.secondaryMaterials) {
+            if (secondaryMaterial.material.hasProperty(PropertyKey.DUST)) {
+                ItemStack dustStack = OreDictUnifier.getGem(secondaryMaterial);
+                builder.chancedOutput(dustStack, 6700, 800);
+            }
+        }
+        builder.fluidInputs(washedInTuple.getKey().getFluid(washedInTuple.getValue() * amount))
+                .chancedOutput(GTUtility.copy(amount, bathingByproduct(material, property)), 7000, 580)
+                .chancedOutput(GTUtility.copy(amount, purifiedCrushingByproduct(material, property)), 1400, 850)
+                .chancedOutput(separateStack, 1000, 250)
+                .chancedOutput(separatedStack2, prefix == OrePrefix.dust ? 500 : 2000,
+                        prefix == OrePrefix.dust ? 150 : 600)
+                .buildAndRegister();
+    }
+
     public static int oreTypeMultiplier(OrePrefix prefix) {
         return prefix == OrePrefix.oreNetherrack || prefix == OrePrefix.oreEndstone ? 2 : 1;
     }
@@ -430,6 +524,9 @@ public class MOPOreFactoryHandler {
         return (int) Math.ceil(amountOfCrushedOre) * oreTypeMultiplier(prefix);
     }
 
+    /**
+     * @return byproduct of ore -> crushed
+     */
     public static ItemStack crushingByproduct(@NotNull Material material, @NotNull OreProperty property) {
         Material byproductMaterial = property.getOreByProduct(0, material);
         ItemStack byproductStack = OreDictUnifier.get(OrePrefix.gem, byproductMaterial);
@@ -437,46 +534,73 @@ public class MOPOreFactoryHandler {
         return byproductStack;
     }
 
+    /**
+     * @return byproduct of crushed -> crushedPurified (Ore Washer)
+     */
     public static ItemStack washingByproduct(@NotNull Material material, @NotNull OreProperty property) {
         Material byproductMaterial = property.getOreByProduct(0, material);
         return OreDictUnifier.get(OrePrefix.dust, byproductMaterial);
     }
 
+    /**
+     * @return byproduct of crushed -> crushedPurified (Chemical Bath)
+     */
     public static ItemStack bathingByproduct(@NotNull Material material, @NotNull OreProperty property) {
         Material byproductMaterial = property.getOreByProduct(3, material);
         return OreDictUnifier.get(OrePrefix.dust, byproductMaterial);
     }
 
+    /**
+     * @return byproduct of crushedPurified -> crushedCentrifuged
+     */
     public static ItemStack purifiedCentrifugingByproduct(@NotNull Material material, @NotNull OreProperty property) {
         Material byproductMaterial = property.getOreByProduct(1, material);
         return OreDictUnifier.get(OrePrefix.dust, byproductMaterial);
     }
 
+    /**
+     * @return byproduct of crushed -> crushedCentrifuged
+     */
     public static ItemStack crushedCentrifugingByproduct(@NotNull Material material, @NotNull OreProperty property) {
         Material byproductMaterial = property.getOreByProduct(1, material);
         return OreDictUnifier.get(OrePrefix.dust, byproductMaterial);
     }
 
+    /**
+     * @return byproduct of crushed -> dustImpure
+     */
     public static ItemStack crushedCrushingByproduct(@NotNull Material material, @NotNull OreProperty property) {
         Material byproductMaterial = property.getOreByProduct(0, material);
         return OreDictUnifier.get(OrePrefix.dust, byproductMaterial);
     }
 
+    /**
+     * @return byproduct of crushedPurified -> dustPure
+     */
     public static ItemStack purifiedCrushingByproduct(@NotNull Material material, @NotNull OreProperty property) {
         Material byproductMaterial = property.getOreByProduct(1, material);
         return OreDictUnifier.get(OrePrefix.dust, byproductMaterial);
     }
 
+    /**
+     * @return byproduct of crushedCentrifuged -> dust
+     */
     public static ItemStack centrifugedCrushingByproduct(@NotNull Material material, @NotNull OreProperty property) {
-        Material byproductMaterial = property.getOreByProduct(1, material);
+        Material byproductMaterial = property.getOreByProduct(2, material);
         return OreDictUnifier.get(OrePrefix.dust, byproductMaterial);
     }
 
+    /**
+     * @return byproduct of dustImpure -> dust
+     */
     public static ItemStack impureByproduct(@NotNull Material material, @NotNull OreProperty property) {
         Material byproductMaterial = property.getOreByProduct(0, material);
         return OreDictUnifier.get(OrePrefix.dust, byproductMaterial);
     }
 
+    /**
+     * @return byproduct of dustPure -> dust
+     */
     public static ItemStack pureByproduct(@NotNull Material material, @NotNull OreProperty property) {
         Material byproductMaterial = property.getOreByProduct(1, material);
         return OreDictUnifier.get(OrePrefix.dust, byproductMaterial);
