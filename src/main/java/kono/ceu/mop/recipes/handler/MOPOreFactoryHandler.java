@@ -430,6 +430,9 @@ public class MOPOreFactoryHandler {
         return (int) Math.ceil(amountOfCrushedOre) * oreTypeMultiplier(prefix);
     }
 
+    /**
+     * @return byproduct of ore -> crushed
+     */
     public static ItemStack crushingByproduct(@NotNull Material material, @NotNull OreProperty property) {
         Material byproductMaterial = property.getOreByProduct(0, material);
         ItemStack byproductStack = OreDictUnifier.get(OrePrefix.gem, byproductMaterial);
@@ -437,46 +440,73 @@ public class MOPOreFactoryHandler {
         return byproductStack;
     }
 
+    /**
+     * @return byproduct of crushed -> crushedPurified (Ore Washer)
+     */
     public static ItemStack washingByproduct(@NotNull Material material, @NotNull OreProperty property) {
         Material byproductMaterial = property.getOreByProduct(0, material);
         return OreDictUnifier.get(OrePrefix.dust, byproductMaterial);
     }
 
+    /**
+     * @return byproduct of crushed -> crushedPurified (Chemical Bath)
+     */
     public static ItemStack bathingByproduct(@NotNull Material material, @NotNull OreProperty property) {
         Material byproductMaterial = property.getOreByProduct(3, material);
         return OreDictUnifier.get(OrePrefix.dust, byproductMaterial);
     }
 
+    /**
+     * @return byproduct of crushedPurified -> crushedCentrifuged
+     */
     public static ItemStack purifiedCentrifugingByproduct(@NotNull Material material, @NotNull OreProperty property) {
         Material byproductMaterial = property.getOreByProduct(1, material);
         return OreDictUnifier.get(OrePrefix.dust, byproductMaterial);
     }
 
+    /**
+     * @return byproduct of crushed -> crushedCentrifuged
+     */
     public static ItemStack crushedCentrifugingByproduct(@NotNull Material material, @NotNull OreProperty property) {
         Material byproductMaterial = property.getOreByProduct(1, material);
         return OreDictUnifier.get(OrePrefix.dust, byproductMaterial);
     }
 
+    /**
+     * @return byproduct of crushed -> dustImpure
+     */
     public static ItemStack crushedCrushingByproduct(@NotNull Material material, @NotNull OreProperty property) {
         Material byproductMaterial = property.getOreByProduct(0, material);
         return OreDictUnifier.get(OrePrefix.dust, byproductMaterial);
     }
 
+    /**
+     * @return byproduct of crushedPurified -> dustPure
+     */
     public static ItemStack purifiedCrushingByproduct(@NotNull Material material, @NotNull OreProperty property) {
         Material byproductMaterial = property.getOreByProduct(1, material);
         return OreDictUnifier.get(OrePrefix.dust, byproductMaterial);
     }
 
+    /**
+     * @return byproduct of crushedCentrifuged -> dust
+     */
     public static ItemStack centrifugedCrushingByproduct(@NotNull Material material, @NotNull OreProperty property) {
         Material byproductMaterial = property.getOreByProduct(1, material);
         return OreDictUnifier.get(OrePrefix.dust, byproductMaterial);
     }
 
+    /**
+     * @return byproduct of dustImpure -> dust
+     */
     public static ItemStack impureByproduct(@NotNull Material material, @NotNull OreProperty property) {
         Material byproductMaterial = property.getOreByProduct(0, material);
         return OreDictUnifier.get(OrePrefix.dust, byproductMaterial);
     }
 
+    /**
+     * @return byproduct of dustPure -> dust
+     */
     public static ItemStack pureByproduct(@NotNull Material material, @NotNull OreProperty property) {
         Material byproductMaterial = property.getOreByProduct(1, material);
         return OreDictUnifier.get(OrePrefix.dust, byproductMaterial);
