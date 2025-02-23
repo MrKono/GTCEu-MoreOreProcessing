@@ -22,6 +22,7 @@ import gregtech.api.pattern.FactoryBlockPattern;
 import gregtech.client.renderer.ICubeRenderer;
 import gregtech.client.renderer.texture.Textures;
 import gregtech.client.utils.TooltipHelper;
+import gregtech.common.ConfigHolder;
 import gregtech.common.blocks.BlockGlassCasing;
 import gregtech.common.blocks.BlockMetalCasing;
 import gregtech.common.blocks.MetaBlocks;
@@ -126,7 +127,11 @@ public class MetaTileEntityOreFactory extends RecipeMapMultiblockController {
             tooltip.add(I18n.format("mop.machine.ore_factory.tooltip.process6"));
             tooltip.add(I18n.format("mop.machine.ore_factory.tooltip.process7"));
             tooltip.add(I18n.format("mop.machine.ore_factory.tooltip.process8"));
-            tooltip.add(I18n.format("mop.machine.ore_factory.tooltip.process9"));
+            if (ConfigHolder.recipes.generateLowQualityGems) {
+                tooltip.add(I18n.format("mop.machine.ore_factory.tooltip.process9"));
+            }
+            tooltip.add(I18n.format("mop.machine.ore_factory.tooltip.process10"));
+            tooltip.add(I18n.format("mop.machine.ore_factory.tooltip.process11"));
             tooltip.add("");
         } else {
             tooltip.add(I18n.format("mop.machine.ore_factory.tooltip.hold_ctrl"));
