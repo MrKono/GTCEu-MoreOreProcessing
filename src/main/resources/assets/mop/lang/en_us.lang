@@ -19,6 +19,8 @@ mop.machine.ore_factory.tooltip.process6=§e6.§7 Macerate -> Chemical Bathing -
 mop.machine.ore_factory.tooltip.process7=§e7.§7 Macerate -> Chemical Bathing -> Thermal Centrifuge -> Macerate
 mop.machine.ore_factory.tooltip.process8=§e8.§7 Macerate -> Ore Washer -> Sifter -> Centrifuge / Macerate (All Gems)
 mop.machine.ore_factory.tooltip.process9=§e9.§7 Macerate -> Ore Washer -> Sifter -> Centrifuge / Macerate (Flawed and Chipped)
+mop.machine.ore_factory.tooltip.process10=§e10.§7 Macerate -> Ore Washer -> Macerate -> Electromagnetic Separating
+mop.machine.ore_factory.tooltip.process11=§e11.§7 Macerate -> Chemical Bathing -> Macerate -> Electromagnetic Separating
 
 
 # Blocks
