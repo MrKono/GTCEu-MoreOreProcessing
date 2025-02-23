@@ -3,6 +3,7 @@ package kono.ceu.mop.common;
 import java.util.Objects;
 import java.util.function.Function;
 
+import kono.ceu.mop.recipes.handler.MOPMaterialInfoLoader;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
@@ -84,6 +85,7 @@ public class CommonProxy {
         MOPMetaTileEntityRecipe.init();
         MOPBlockRecipe.init();
         MOPRecipeHandlerList.init();
+        MOPMaterialInfoLoader.init();
     }
 
     @SubscribeEvent(priority = EventPriority.LOW)
