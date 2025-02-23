@@ -492,7 +492,7 @@ public class MOPOreFactoryHandler {
      * @return byproduct of crushedCentrifuged -> dust
      */
     public static ItemStack centrifugedCrushingByproduct(@NotNull Material material, @NotNull OreProperty property) {
-        Material byproductMaterial = property.getOreByProduct(1, material);
+        Material byproductMaterial = property.getOreByProduct(2, material);
         return OreDictUnifier.get(OrePrefix.dust, byproductMaterial);
     }
 
