@@ -124,7 +124,8 @@ public class MOPOreFactoryHandler {
     }
 
     // Macerate -> Ore Washer -> Sifter -> Centrifuge
-    public static void registerProcess3(OrePrefix orePrefix, @NotNull Material material, OreProperty property) {
+    public static void registerProcess3(OrePrefix orePrefix, @NotNull Material material,
+                                        @NotNull OreProperty property) {
         int amount = 2 * outputAmount(orePrefix, property);
         if (!material.hasProperty(PropertyKey.GEM)) return;
         ItemStack exquisiteStack = OreDictUnifier.get(OrePrefix.gemExquisite, material);
@@ -307,7 +308,8 @@ public class MOPOreFactoryHandler {
     }
 
     // Macerate -> Ore Washer -> Sifter -> Centrifuge / Macerate (All Gems)
-    public static void registerProcess8(OrePrefix orePrefix, @NotNull Material material, OreProperty property) {
+    public static void registerProcess8(OrePrefix orePrefix, @NotNull Material material,
+                                        @NotNull OreProperty property) {
         int amount = 2 * outputAmount(orePrefix, property);
         if (!material.hasProperty(PropertyKey.GEM)) return;
         ItemStack exquisiteStack = OreDictUnifier.get(OrePrefix.dust, material);
@@ -366,7 +368,8 @@ public class MOPOreFactoryHandler {
     }
 
     // Macerate -> Ore Washer -> Sifter -> Centrifuge / Macerate (Flawed and Chipped)
-    public static void registerProcess9(OrePrefix orePrefix, @NotNull Material material, OreProperty property) {
+    public static void registerProcess9(OrePrefix orePrefix, @NotNull Material material,
+                                        @NotNull OreProperty property) {
         int amount = 2 * outputAmount(orePrefix, property);
         if (!material.hasProperty(PropertyKey.GEM)) return;
         ItemStack exquisiteStack = OreDictUnifier.get(OrePrefix.gemExquisite, material);
