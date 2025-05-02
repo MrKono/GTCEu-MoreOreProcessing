@@ -2,9 +2,7 @@ package kono.ceu.mop.mixin;
 
 import static gregtech.api.items.materialitem.MetaPrefixItem.purifyMap;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockCauldron;
