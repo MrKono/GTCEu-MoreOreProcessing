@@ -1,5 +1,6 @@
 package kono.ceu.mop.common.blocks;
 
+import kono.ceu.mop.common.blocks.Casing.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -10,11 +11,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import gregtech.common.blocks.MetaBlocks;
 
-import kono.ceu.mop.common.blocks.Casing.MOPBlockPrimitiveCasing;
-import kono.ceu.mop.common.blocks.Casing.MOPGearBoxCasing;
-import kono.ceu.mop.common.blocks.Casing.MOPMetalCasing;
-import kono.ceu.mop.common.blocks.Casing.MOPPipeCasing;
-
 public class MOPMetaBlocks {
 
     private MOPMetaBlocks() {}
@@ -23,6 +19,7 @@ public class MOPMetaBlocks {
     public static final MOPMetalCasing MOP_METAL_CASING = new MOPMetalCasing();
     public static final MOPPipeCasing MOP_PIPE_CASING = new MOPPipeCasing();
     public static final MOPGearBoxCasing MOP_GEAR_BOX_CASING = new MOPGearBoxCasing();
+    public static final MOPGlassCasing MOP_GLASS_CASING = new MOPGlassCasing();
 
     @SideOnly(Side.CLIENT)
     public static void registerItemModels() {
@@ -30,6 +27,7 @@ public class MOPMetaBlocks {
         registerItemModel(MOP_METAL_CASING);
         registerItemModel(MOP_PIPE_CASING);
         registerItemModel(MOP_GEAR_BOX_CASING);
+        registerItemModel(MOP_GLASS_CASING);
     }
 
     @SideOnly(Side.CLIENT)

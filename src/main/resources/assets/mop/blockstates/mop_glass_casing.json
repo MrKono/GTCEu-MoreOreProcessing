@@ -1,0 +1,18 @@
+{
+  "forge_marker": 1,
+  "variants": {
+    "active=false,variant=borosilicate_glass": {
+      "model": "minecraft:cube_all",
+      "textures": {
+        "all": "gregtech:blocks/glass/borosilicate_glass"
+      }
+    },
+    "active=true,variant=borosilicate_glass": {
+      "model": "gregtech:cube_2_layer_all",
+      "textures": {
+        "bot_all": "gregtech:blocks/glass/borosilicate_glass",
+        "top_all": "gregtech:blocks/casings/fusion/machine_casing_fusion_bloom"
+      }
+    }
+  }
+}

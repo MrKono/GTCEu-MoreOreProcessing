@@ -47,6 +47,7 @@ public class CommonProxy {
         registry.register(MOPMetaBlocks.MOP_METAL_CASING);
         registry.register(MOPMetaBlocks.MOP_PIPE_CASING);
         registry.register(MOPMetaBlocks.MOP_GEAR_BOX_CASING);
+        registry.register(MOPMetaBlocks.MOP_GLASS_CASING);
     }
 
     @SubscribeEvent
@@ -57,6 +58,7 @@ public class CommonProxy {
         registry.register(createItemBlock(MOPMetaBlocks.MOP_METAL_CASING, VariantItemBlock::new));
         registry.register(createItemBlock(MOPMetaBlocks.MOP_PIPE_CASING, VariantItemBlock::new));
         registry.register(createItemBlock(MOPMetaBlocks.MOP_GEAR_BOX_CASING, VariantItemBlock::new));
+        registry.register(createItemBlock(MOPMetaBlocks.MOP_GLASS_CASING, VariantItemBlock::new));
     }
 
     private static <T extends Block> ItemBlock createItemBlock(T block, Function<T, ItemBlock> producer) {
