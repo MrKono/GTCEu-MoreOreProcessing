@@ -10,6 +10,8 @@ import gregtech.api.recipes.builders.SimpleRecipeBuilder;
 import gregtech.core.sound.GTSoundEvents;
 
 import crafttweaker.annotations.ZenRegister;
+import net.minecraft.client.gui.Gui;
+import net.minecraft.client.renderer.block.model.SimpleBakedModel;
 import stanhebben.zenscript.annotations.ZenClass;
 import stanhebben.zenscript.annotations.ZenProperty;
 
@@ -28,4 +30,11 @@ public class MOPRecipeMaps {
                     .setSlotOverlay(true, false, GuiTextures.DUST_OVERLAY)
                     .setProgressBar(GuiTextures.PROGRESS_BAR_MULTI_ENERGY_YELLOW, ProgressWidget.MoveType.HORIZONTAL)
                     .setSound(GTSoundEvents.MACERATOR);
+
+    public static final RecipeMap<SimpleRecipeBuilder> CHEMICAL_FACTORY_RECIPE = new RecipeMap<>(
+            "chemical_factory", 9, 9, 9, 9, new SimpleRecipeBuilder(), false)
+                    .setSlotOverlay(false, false, GuiTextures.DUST_OVERLAY)
+                    .setSlotOverlay(false, true, GuiTextures.ATOMIC_OVERLAY_1)
+                    .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW_MULTIPLE, ProgressWidget.MoveType.HORIZONTAL)
+                    .setSound(GTSoundEvents.CHEMICAL_REACTOR);
 }
