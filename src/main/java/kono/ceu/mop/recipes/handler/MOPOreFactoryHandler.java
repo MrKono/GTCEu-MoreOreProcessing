@@ -70,7 +70,7 @@ public class MOPOreFactoryHandler {
                     OreDictUnifier.get(OrePrefix.cleanGravel, material));
         }
         int amount = 2 * outputAmount(orePrefix, property);
-        RecipeBuilder<?> builder = MOPRecipeMaps.ORE_FACTORY_RECIPES.recipeBuilder()
+        RecipeBuilder<?> builder = MOPRecipeMaps.MOP_ORE_FACTORY_RECIPES.recipeBuilder()
                 .input(orePrefix, material)
                 .outputs(GTUtility.copy(amount, output))
                 .chancedOutput(crushingByproduct(material, property), 1400, 850)
@@ -103,7 +103,7 @@ public class MOPOreFactoryHandler {
                     OreDictUnifier.get(OrePrefix.cleanGravel, material));
         }
         int amount = 2 * outputAmount(orePrefix, property);
-        RecipeBuilder<?> builder = MOPRecipeMaps.ORE_FACTORY_RECIPES.recipeBuilder()
+        RecipeBuilder<?> builder = MOPRecipeMaps.MOP_ORE_FACTORY_RECIPES.recipeBuilder()
                 .input(orePrefix, material)
                 .outputs(GTUtility.copy(amount, output))
                 .chancedOutput(crushingByproduct(material, property), 1400, 850)
@@ -147,7 +147,7 @@ public class MOPOreFactoryHandler {
                     OreDictUnifier.get(OrePrefix.reduced, material),
                     OreDictUnifier.get(OrePrefix.cleanGravel, material));
         }
-        RecipeBuilder<?> builder = MOPRecipeMaps.ORE_FACTORY_RECIPES.recipeBuilder()
+        RecipeBuilder<?> builder = MOPRecipeMaps.MOP_ORE_FACTORY_RECIPES.recipeBuilder()
                 .input(orePrefix, material)
                 .chancedOutput(crushingByproduct(material, property), 1400, 850)
                 .fluidInputs(Materials.Lubricant.getFluid(10))
@@ -194,7 +194,7 @@ public class MOPOreFactoryHandler {
                     OreDictUnifier.get(OrePrefix.cleanGravel, material));
         }
         int amount = 2 * outputAmount(orePrefix, property);
-        RecipeBuilder<?> builder = MOPRecipeMaps.ORE_FACTORY_RECIPES.recipeBuilder()
+        RecipeBuilder<?> builder = MOPRecipeMaps.MOP_ORE_FACTORY_RECIPES.recipeBuilder()
                 .input(orePrefix, material)
                 .outputs(GTUtility.copy(amount, output))
                 .chancedOutput(crushingByproduct(material, property), 1400, 850)
@@ -223,7 +223,7 @@ public class MOPOreFactoryHandler {
                     OreDictUnifier.get(OrePrefix.cleanGravel, material));
         }
         int amount = 2 * outputAmount(orePrefix, property);
-        RecipeBuilder<?> builder = MOPRecipeMaps.ORE_FACTORY_RECIPES.recipeBuilder()
+        RecipeBuilder<?> builder = MOPRecipeMaps.MOP_ORE_FACTORY_RECIPES.recipeBuilder()
                 .input(orePrefix, material)
                 .outputs(GTUtility.copy(amount, output))
                 .chancedOutput(crushingByproduct(material, property), 1400, 850)
@@ -254,7 +254,7 @@ public class MOPOreFactoryHandler {
                     OreDictUnifier.get(OrePrefix.cleanGravel, material));
         }
         int amount = 2 * outputAmount(orePrefix, property);
-        RecipeBuilder<?> builder = MOPRecipeMaps.ORE_FACTORY_RECIPES.recipeBuilder()
+        RecipeBuilder<?> builder = MOPRecipeMaps.MOP_ORE_FACTORY_RECIPES.recipeBuilder()
                 .input(orePrefix, material)
                 .outputs(GTUtility.copy(amount, output))
                 .chancedOutput(crushingByproduct(material, property), 1400, 850)
@@ -287,7 +287,7 @@ public class MOPOreFactoryHandler {
                     OreDictUnifier.get(OrePrefix.cleanGravel, material));
         }
         int amount = 2 * outputAmount(orePrefix, property);
-        RecipeBuilder<?> builder = MOPRecipeMaps.ORE_FACTORY_RECIPES.recipeBuilder()
+        RecipeBuilder<?> builder = MOPRecipeMaps.MOP_ORE_FACTORY_RECIPES.recipeBuilder()
                 .input(orePrefix, material)
                 .outputs(GTUtility.copy(amount, output))
                 .chancedOutput(crushingByproduct(material, property), 1400, 850)
@@ -331,7 +331,7 @@ public class MOPOreFactoryHandler {
                     OreDictUnifier.get(OrePrefix.reduced, material),
                     OreDictUnifier.get(OrePrefix.cleanGravel, material));
         }
-        RecipeBuilder<?> builder = MOPRecipeMaps.ORE_FACTORY_RECIPES.recipeBuilder()
+        RecipeBuilder<?> builder = MOPRecipeMaps.MOP_ORE_FACTORY_RECIPES.recipeBuilder()
                 .input(orePrefix, material)
                 .chancedOutput(crushingByproduct(material, property), 1400, 850)
                 .fluidInputs(Materials.Lubricant.getFluid(10))
@@ -391,7 +391,7 @@ public class MOPOreFactoryHandler {
                     OreDictUnifier.get(OrePrefix.reduced, material),
                     OreDictUnifier.get(OrePrefix.cleanGravel, material));
         }
-        RecipeBuilder<?> builder = MOPRecipeMaps.ORE_FACTORY_RECIPES.recipeBuilder()
+        RecipeBuilder<?> builder = MOPRecipeMaps.MOP_ORE_FACTORY_RECIPES.recipeBuilder()
                 .input(orePrefix, material)
                 .chancedOutput(crushingByproduct(material, property), 1400, 850)
                 .fluidInputs(Materials.Lubricant.getFluid(10))
@@ -448,7 +448,7 @@ public class MOPOreFactoryHandler {
                     OreDictUnifier.get(OrePrefix.reduced, material),
                     OreDictUnifier.get(OrePrefix.cleanGravel, material));
         }
-        RecipeBuilder<?> builder = MOPRecipeMaps.ORE_FACTORY_RECIPES.recipeBuilder()
+        RecipeBuilder<?> builder = MOPRecipeMaps.MOP_ORE_FACTORY_RECIPES.recipeBuilder()
                 .input(orePrefix, material)
                 .outputs(GTUtility.copy(amount, output))
                 .chancedOutput(crushingByproduct(material, property), 1400, 850)
@@ -493,7 +493,7 @@ public class MOPOreFactoryHandler {
                     OreDictUnifier.get(OrePrefix.reduced, material),
                     OreDictUnifier.get(OrePrefix.cleanGravel, material));
         }
-        RecipeBuilder<?> builder = MOPRecipeMaps.ORE_FACTORY_RECIPES.recipeBuilder()
+        RecipeBuilder<?> builder = MOPRecipeMaps.MOP_ORE_FACTORY_RECIPES.recipeBuilder()
                 .input(orePrefix, material)
                 .outputs(GTUtility.copy(amount, output))
                 .chancedOutput(crushingByproduct(material, property), 1400, 850)

@@ -1,9 +1,15 @@
 # ChangeLog
+* * *
+# 1.0.5
+- Bump version to MixinBooter v10 
+  - Updated MixinBooter from v9.1 to v10.6
+- Port `OreFactory` to [GTConsolidate](https://github.com/MrKono/GTConsolidate)
+
 * * *  
 # 1.0.4.1-beta
 - Fix mistaken tooltip
 
-***
+* ** 
 # 1.0.4-beta
 - Add Recycling recipe for Casings  
 - Fix Thermal Centrifuging byproduct  

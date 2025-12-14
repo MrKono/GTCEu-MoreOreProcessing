@@ -27,6 +27,7 @@ import gregtech.common.blocks.BlockGlassCasing;
 import gregtech.common.blocks.BlockMetalCasing;
 import gregtech.common.blocks.MetaBlocks;
 
+import kono.ceu.mop.api.Mods;
 import kono.ceu.mop.api.recipes.MOPRecipeMaps;
 import kono.ceu.mop.client.MOPTextures;
 import kono.ceu.mop.common.blocks.Casing.MOPGearBoxCasing;
@@ -37,7 +38,7 @@ import kono.ceu.mop.common.blocks.MOPMetaBlocks;
 public class MetaTileEntityOreFactory extends RecipeMapMultiblockController {
 
     public MetaTileEntityOreFactory(ResourceLocation metaTileEntityId) {
-        super(metaTileEntityId, MOPRecipeMaps.ORE_FACTORY_RECIPES);
+        super(metaTileEntityId, MOPRecipeMaps.MOP_ORE_FACTORY_RECIPES);
     }
 
     @Override
@@ -135,6 +136,9 @@ public class MetaTileEntityOreFactory extends RecipeMapMultiblockController {
             tooltip.add("");
         } else {
             tooltip.add(I18n.format("mop.machine.ore_factory.tooltip.hold_ctrl"));
+        }
+        if (Mods.GTConsolidate.isModLoaded()) {
+            tooltip.add(I18n.format("mop.machine.ore_factory.tooltip3"));
         }
     }
 }

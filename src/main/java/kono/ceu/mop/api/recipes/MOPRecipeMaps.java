@@ -9,6 +9,8 @@ import gregtech.api.recipes.builders.PrimitiveRecipeBuilder;
 import gregtech.api.recipes.builders.SimpleRecipeBuilder;
 import gregtech.core.sound.GTSoundEvents;
 
+import kono.ceu.mop.api.Mods;
+
 import crafttweaker.annotations.ZenRegister;
 import stanhebben.zenscript.annotations.ZenClass;
 import stanhebben.zenscript.annotations.ZenProperty;
@@ -22,8 +24,8 @@ public class MOPRecipeMaps {
             "bronze_reinforced_blast_furnace", 3, 6, 0, 0, new PrimitiveRecipeBuilder(), false)
                     .setSound(GTSoundEvents.FIRE);
 
-    public static final RecipeMap<SimpleRecipeBuilder> ORE_FACTORY_RECIPES = new RecipeMap<>(
-            "ore_factory", 2, 12, 2, 0, new SimpleRecipeBuilder().EUt(VA[LV]), false)
+    public static final RecipeMap<SimpleRecipeBuilder> MOP_ORE_FACTORY_RECIPES = new RecipeMap<>(
+            "ore_factory_m", 2, 12, 2, 0, new SimpleRecipeBuilder().EUt(VA[LV]), Mods.GTConsolidate.isModLoaded())
                     .setSlotOverlay(false, false, GuiTextures.IN_SLOT_OVERLAY)
                     .setSlotOverlay(true, false, GuiTextures.DUST_OVERLAY)
                     .setProgressBar(GuiTextures.PROGRESS_BAR_MULTI_ENERGY_YELLOW, ProgressWidget.MoveType.HORIZONTAL)

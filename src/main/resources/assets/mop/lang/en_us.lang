@@ -21,6 +21,8 @@ mop.machine.ore_factory.tooltip.process8=§e8.§7 Macerate -> Ore Washer -> Sift
 mop.machine.ore_factory.tooltip.process9=§e9.§7 Macerate -> Ore Washer -> Sifter -> Centrifuge / Macerate (Flawed and Chipped)
 mop.machine.ore_factory.tooltip.process10=§e10.§7 Macerate -> Ore Washer -> Macerate -> Electromagnetic Separating
 mop.machine.ore_factory.tooltip.process11=§e11.§7 Macerate -> Chemical Bathing -> Macerate -> Electromagnetic Separating
+mop.machine.ore_factory.tooltip3=Same as the one with the same name as §eGTConsolidate§7.
+
 
 
 # Blocks
@@ -45,4 +47,4 @@ mop.machine.industrial_ore_factory.name=Industrial Ore Processing Factory
 
 # Recipe Maps
 recipemap.bronze_reinforced_blast_furnace.name=Bronze Reinforced Blast Furnace
-recipemap.ore_factory.name=Ore Processing Factory
+recipemap.ore_factory_m.name=Ore Processing Factory

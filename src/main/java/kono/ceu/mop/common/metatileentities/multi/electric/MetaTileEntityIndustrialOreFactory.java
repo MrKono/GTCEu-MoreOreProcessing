@@ -27,6 +27,7 @@ import gregtech.common.blocks.MetaBlocks;
 import gregicality.multiblocks.api.metatileentity.GCYMMultiblockAbility;
 import gregicality.multiblocks.api.metatileentity.GCYMRecipeMapMultiblockController;
 
+import kono.ceu.mop.api.Mods;
 import kono.ceu.mop.api.recipes.MOPRecipeMaps;
 import kono.ceu.mop.client.MOPTextures;
 import kono.ceu.mop.common.blocks.Casing.MOPGearBoxCasing;
@@ -37,7 +38,7 @@ import kono.ceu.mop.common.blocks.MOPMetaBlocks;
 public class MetaTileEntityIndustrialOreFactory extends GCYMRecipeMapMultiblockController {
 
     public MetaTileEntityIndustrialOreFactory(ResourceLocation metaTileEntityId) {
-        super(metaTileEntityId, MOPRecipeMaps.ORE_FACTORY_RECIPES);
+        super(metaTileEntityId, MOPRecipeMaps.MOP_ORE_FACTORY_RECIPES);
     }
 
     @Override
@@ -139,6 +140,9 @@ public class MetaTileEntityIndustrialOreFactory extends GCYMRecipeMapMultiblockC
             tooltip.add("");
         } else {
             tooltip.add(I18n.format("mop.machine.ore_factory.tooltip.hold_ctrl"));
+        }
+        if (Mods.GTConsolidate.isModLoaded()) {
+            tooltip.add(I18n.format("mop.machine.ore_factory.tooltip3"));
         }
     }
 }
