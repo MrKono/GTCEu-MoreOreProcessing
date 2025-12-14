@@ -13,6 +13,7 @@ import gregtech.api.unification.stack.UnificationEntry;
 import gregtech.common.ConfigHolder;
 import gregtech.common.blocks.MetaBlocks;
 
+import kono.ceu.mop.api.Mods;
 import kono.ceu.mop.common.blocks.Casing.MOPGearBoxCasing;
 import kono.ceu.mop.common.blocks.Casing.MOPMetalCasing;
 import kono.ceu.mop.common.blocks.Casing.MOPPipeCasing;
@@ -39,59 +40,63 @@ public class MOPBlockRecipe {
                     'B', MetaBlocks.METAL_CASING.getItemVariant(PRIMITIVE_BRICKS));
         }
 
-        // Factory Casing
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .inputs(MetaBlocks.METAL_CASING.getItemVariant(STAINLESS_CLEAN))
-                .fluidInputs(Materials.Iridium.getFluid(144))
-                .outputs(MOPMetaBlocks.MOP_METAL_CASING.getItemVariant(MOPMetalCasing.CasingType.IRIDIUM))
-                .duration(5 * 20).EUt(VA[LV]).buildAndRegister();
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .inputs(MOPMetaBlocks.MOP_METAL_CASING.getItemVariant(MOPMetalCasing.CasingType.IRIDIUM))
-                .fluidInputs(Materials.Americium.getFluid(144))
-                .outputs(MOPMetaBlocks.MOP_METAL_CASING.getItemVariant(MOPMetalCasing.CasingType.AMERICIUM))
-                .duration(5 * 20).EUt(VA[LV]).buildAndRegister();
+        if (!Mods.GTConsolidate.isModLoaded()) {
+            // Factory Casing
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .inputs(MetaBlocks.METAL_CASING.getItemVariant(STAINLESS_CLEAN))
+                    .fluidInputs(Materials.Iridium.getFluid(144))
+                    .outputs(MOPMetaBlocks.MOP_METAL_CASING.getItemVariant(MOPMetalCasing.CasingType.IRIDIUM))
+                    .duration(5 * 20).EUt(VA[LV]).buildAndRegister();
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .inputs(MOPMetaBlocks.MOP_METAL_CASING.getItemVariant(MOPMetalCasing.CasingType.IRIDIUM))
+                    .fluidInputs(Materials.Americium.getFluid(144))
+                    .outputs(MOPMetaBlocks.MOP_METAL_CASING.getItemVariant(MOPMetalCasing.CasingType.AMERICIUM))
+                    .duration(5 * 20).EUt(VA[LV]).buildAndRegister();
 
-        // Gearbox Casing
-        ModHandler.addShapedRecipe("gearbox_iridium",
-                MOPMetaBlocks.MOP_GEAR_BOX_CASING.getItemVariant(MOPGearBoxCasing.CasingType.IRIDIUM, amount),
-                "PhP", "GFG", "PwP",
-                'P', new UnificationEntry(plate, Materials.Iridium),
-                'G', new UnificationEntry(gear, Materials.Iridium),
-                'F', new UnificationEntry(frameGt, Materials.Iridium));
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(plate, Materials.Iridium, 6)
-                .input(gear, Materials.Iridium, 2)
-                .input(frameGt, Materials.Iridium)
-                .circuitMeta(4)
-                .outputs(MOPMetaBlocks.MOP_GEAR_BOX_CASING.getItemVariant(MOPGearBoxCasing.CasingType.IRIDIUM, amount))
-                .duration(5 * 20).EUt(VA[LV]).buildAndRegister();
-        ModHandler.addShapedRecipe("gearbox_americium",
-                MOPMetaBlocks.MOP_GEAR_BOX_CASING.getItemVariant(MOPGearBoxCasing.CasingType.AMERICIUM, amount),
-                "PhP", "GFG", "PwP",
-                'P', new UnificationEntry(plate, Materials.Americium),
-                'G', new UnificationEntry(gear, Materials.Americium),
-                'F', new UnificationEntry(frameGt, Materials.Americium));
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(plate, Materials.Americium, 6)
-                .input(gear, Materials.Americium, 2)
-                .input(frameGt, Materials.Americium)
-                .circuitMeta(4)
-                .outputs(
-                        MOPMetaBlocks.MOP_GEAR_BOX_CASING.getItemVariant(MOPGearBoxCasing.CasingType.AMERICIUM, amount))
-                .duration(5 * 20).EUt(VA[LV]).buildAndRegister();
+            // Gearbox Casing
+            ModHandler.addShapedRecipe("gearbox_iridium",
+                    MOPMetaBlocks.MOP_GEAR_BOX_CASING.getItemVariant(MOPGearBoxCasing.CasingType.IRIDIUM, amount),
+                    "PhP", "GFG", "PwP",
+                    'P', new UnificationEntry(plate, Materials.Iridium),
+                    'G', new UnificationEntry(gear, Materials.Iridium),
+                    'F', new UnificationEntry(frameGt, Materials.Iridium));
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(plate, Materials.Iridium, 6)
+                    .input(gear, Materials.Iridium, 2)
+                    .input(frameGt, Materials.Iridium)
+                    .circuitMeta(4)
+                    .outputs(MOPMetaBlocks.MOP_GEAR_BOX_CASING.getItemVariant(MOPGearBoxCasing.CasingType.IRIDIUM,
+                            amount))
+                    .duration(5 * 20).EUt(VA[LV]).buildAndRegister();
+            ModHandler.addShapedRecipe("gearbox_americium",
+                    MOPMetaBlocks.MOP_GEAR_BOX_CASING.getItemVariant(MOPGearBoxCasing.CasingType.AMERICIUM, amount),
+                    "PhP", "GFG", "PwP",
+                    'P', new UnificationEntry(plate, Materials.Americium),
+                    'G', new UnificationEntry(gear, Materials.Americium),
+                    'F', new UnificationEntry(frameGt, Materials.Americium));
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(plate, Materials.Americium, 6)
+                    .input(gear, Materials.Americium, 2)
+                    .input(frameGt, Materials.Americium)
+                    .circuitMeta(4)
+                    .outputs(
+                            MOPMetaBlocks.MOP_GEAR_BOX_CASING.getItemVariant(MOPGearBoxCasing.CasingType.AMERICIUM,
+                                    amount))
+                    .duration(5 * 20).EUt(VA[LV]).buildAndRegister();
 
-        // Pipe Casing
-        ModHandler.addShapedRecipe("pipe_casing_iridium",
-                MOPMetaBlocks.MOP_PIPE_CASING.getItemVariant(MOPPipeCasing.CasingType.IRIDIUM, amount),
-                "PNP", "NFN", "PNP",
-                'P', new UnificationEntry(plate, Materials.Iridium),
-                'N', new UnificationEntry(pipeNormalFluid, Materials.Iridium),
-                'F', new UnificationEntry(frameGt, Materials.Iridium));
-        ModHandler.addShapedRecipe("pipe_casing_americium",
-                MOPMetaBlocks.MOP_PIPE_CASING.getItemVariant(MOPPipeCasing.CasingType.AMERICIUM, amount),
-                "PNP", "NFN", "PNP",
-                'P', new UnificationEntry(plate, Materials.Americium),
-                'N', new UnificationEntry(pipeNormalItem, Materials.Americium),
-                'F', new UnificationEntry(frameGt, Materials.Americium));
+            // Pipe Casing
+            ModHandler.addShapedRecipe("pipe_casing_iridium",
+                    MOPMetaBlocks.MOP_PIPE_CASING.getItemVariant(MOPPipeCasing.CasingType.IRIDIUM, amount),
+                    "PNP", "NFN", "PNP",
+                    'P', new UnificationEntry(plate, Materials.Iridium),
+                    'N', new UnificationEntry(pipeNormalFluid, Materials.Iridium),
+                    'F', new UnificationEntry(frameGt, Materials.Iridium));
+            ModHandler.addShapedRecipe("pipe_casing_americium",
+                    MOPMetaBlocks.MOP_PIPE_CASING.getItemVariant(MOPPipeCasing.CasingType.AMERICIUM, amount),
+                    "PNP", "NFN", "PNP",
+                    'P', new UnificationEntry(plate, Materials.Americium),
+                    'N', new UnificationEntry(pipeNormalItem, Materials.Americium),
+                    'F', new UnificationEntry(frameGt, Materials.Americium));
+        }
     }
 }

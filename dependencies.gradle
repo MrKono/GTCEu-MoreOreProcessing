@@ -50,4 +50,5 @@ dependencies {
     devOnlyNonPublishable(rfg.deobf("curse.maven:gregicality-multiblocks-564858:5619513")) // GCYM 1.2.11
 
     compileOnly rfg.deobf("curse.maven:endercore-231868:4671384") // EnderCore 0.5.78
+    compileOnly rfg.deobf("curse.maven:gtconsolidate-1178654:7331068")
 }
